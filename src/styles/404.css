@@ -1,0 +1,68 @@
+/* ═══════════════════════════════════════════════════════════
+   edBuddy Pro — 404.css
+   "Module 404": the one page that is not in the syllabus.
+   One bold element (the outlined 404), everything else quiet.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --font: 'Figtree', -apple-system, sans-serif;
+  --font-display: 'Figtree', -apple-system, sans-serif;
+  --navy: #06213D;
+  --navy-2: #0A2C50;
+  --blue: #0559B3;
+  --sky: #8CC0F2;
+  --nav-h: 64px;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font-family: var(--font); background: var(--navy); color: #fff;
+  -webkit-font-smoothing: antialiased; overflow-x: clip; }
+
+.nf { position: relative; min-height: calc(100svh - var(--nav-h)); overflow: hidden;
+  display: flex; align-items: center; padding: 48px 0 40px; isolation: isolate; }
+.nf-in { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+/* the one bold element */
+.nf-num { position: absolute; z-index: -1; right: -.06em; bottom: -.2em; margin: 0;
+  font: 900 clamp(220px, 62vw, 620px)/.8 var(--font-display); letter-spacing: -.06em;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(140, 192, 242, .22);
+  user-select: none; pointer-events: none; }
+
+.nf-mod { margin: 0 0 18px; font-size: 15px; font-weight: 600; color: var(--sky); }
+.nf-h1 { margin: 0; max-width: 13ch; font: 800 clamp(38px, 9vw, 76px)/1 var(--font-display);
+  letter-spacing: -.035em; }
+.nf-p { margin: 20px 0 0; max-width: 46ch; font-size: clamp(16px, 4.2vw, 18px); line-height: 1.6;
+  color: rgba(255, 255, 255, .78); }
+.nf-path { color: #fff; font-weight: 600; overflow-wrap: anywhere; }
+
+.nf-btns { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 0; }
+.nf-b { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 8px;
+  font: 700 15px var(--font); text-decoration: none; transition: background .2s, border-color .2s; }
+.nf-b--p { background: #fff; color: var(--navy); }
+.nf-b--p:hover { background: #E6EFFA; }
+.nf-b--g { color: #fff; border: 1px solid rgba(255, 255, 255, .32); }
+.nf-b--g:hover { border-color: #fff; }
+
+/* the index of real destinations */
+.nf-idx { margin: 44px 0 0; max-width: 620px; }
+.nf-idx h2 { margin: 0 0 6px; font-size: 15px; font-weight: 600; color: rgba(255, 255, 255, .6); }
+.nf-idx ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, .14); }
+.nf-idx a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 15px 2px; border-bottom: 1px solid rgba(255, 255, 255, .14); color: #fff; text-decoration: none;
+  transition: background .15s, padding .15s; }
+.nf-idx a:hover { background: rgba(255, 255, 255, .05); padding-left: 10px; padding-right: 10px; }
+.nf-idx b { font-size: 17px; font-weight: 600; }
+.nf-idx span { flex: none; font-size: 13px; color: rgba(255, 255, 255, .6); }
+.nf-idx .is-live span { color: #7EE0B5; }
+
+.nf-foot { padding: 18px 20px 26px; text-align: center; font-size: 13px; color: rgba(255, 255, 255, .55); }
+.nf-foot a { color: inherit; }
+
+/* nav sits on white; keep it, it is how people get home */
+@media (min-width: 900px) {
+  .nf-in { padding: 0 32px; }
+  .nf { padding: 72px 0 64px; }
+  .nf-num { right: -.04em; bottom: -.16em; }
+  .nf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+  .nf-idx { margin: 0; }
+}

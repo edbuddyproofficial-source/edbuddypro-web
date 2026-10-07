@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Page not found | edBuddy Pro</title>
+<meta name="description" content="This page is not on edBuddy Pro. Find AI for HR Professionals, the courses opening soon, and training for teams.">
+  <!-- @include head -->
+  <link rel="stylesheet" href="/styles/404.css">
+  <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
+</head>
+<body class="has-fixed-nav">
+
+<!-- @include nav -->
+
+<main class="nf">
+  <p class="nf-num" aria-hidden="true">404</p>
+  <div class="nf-in nf-grid">
+    <div>
+      <p class="nf-mod">Module 404</p>
+      <h1 class="nf-h1">This page isn't in the syllabus.</h1>
+      <p class="nf-p">We couldn't find <span class="nf-path" id="nfPath">that address</span>. The link may be old, or the page may have moved. These are the pages people usually want.</p>
+      <div class="nf-btns">
+        <a class="nf-b nf-b--p" href="/">Go to the homepage</a>
+        <a class="nf-b nf-b--g" href="mailto:{{site.email}}?subject=Broken%20link%20on%20edbuddypro.com">Report the link</a>
+      </div>
+    </div>
+
+    <nav class="nf-idx" aria-label="Where to go next">
+      <h2>Courses and pages</h2>
+      <ul>
+        <li><a class="is-live" href="/courses/ai-for-hr"><b>AI for HR Professionals</b><span>Open for enrolment</span></a></li>
+        <li><a href="/courses/ai-for-finance"><b>AI for Finance Teams</b><span>Opening soon</span></a></li>
+        <li><a href="/courses/ai-for-marketing"><b>AI for Marketing Professionals</b><span>Opening soon</span></a></li>
+        <li><a href="/courses/ai-for-sales"><b>AI for Sales Professionals</b><span>Opening soon</span></a></li>
+        <li><a href="/courses/ai-for-product"><b>AI for Product Managers</b><span>Opening soon</span></a></li>
+        <li><a href="/for-business"><b>Training for teams</b><span>For business</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</main>
+
+<p class="nf-foot">&copy; 2026 edBuddy Pro. <a href="/legal/privacy-policy">Privacy</a> &middot; <a href="/legal/terms-of-service">Terms</a></p>
+
+<script>
+  // show the address that failed, so people can see a typo for themselves
+  (function () {
+    var el = document.getElementById('nfPath');
+    if (el && location.pathname !== '/404') el.textContent = location.pathname;
+  })();
+</script>
+<script src="/scripts/site.js" defer></script>
+</body>
+</html>

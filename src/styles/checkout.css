@@ -78,15 +78,15 @@
 
   /* ── buttons: 8px radius, exactly as .btn-p / .co-btn on the site ── */
   .btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
-    height:48px;border-radius:8px;border:1px solid transparent;cursor:pointer;
+    height:48px;border-radius: 8px;border:1px solid transparent;cursor:pointer;
     font-family:var(--font);font-size:15px;font-weight:600;
     transition:transform .16s var(--ease),box-shadow .2s,background .16s,border-color .16s}
   .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;
     stroke-linecap:round;stroke-linejoin:round}
   .btn-p{background:var(--blue);color:#fff;
-    box-shadow:0 1px 2px rgba(5,89,179,.2),0 8px 20px rgba(5,89,179,.16)}
-  .btn-p:hover{background:var(--blue-d);transform:translateY(-1px);
-    box-shadow:0 2px 4px rgba(5,89,179,.22),0 12px 26px rgba(5,89,179,.2)}
+    box-shadow: none}
+  .btn-p:hover{background:var(--blue-d);
+    box-shadow: none}
   .btn-g{background:#fff;color:var(--ink);border-color:var(--line-2)}
   .btn-g:hover{border-color:var(--blue);color:var(--blue)}
   .btn-d{background:var(--ink);color:#fff}
@@ -95,35 +95,35 @@
 
   /* image card — replaces the express-pay row. Reassures the buyer they are
      paying for the thing they just looked at. */
-  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;
-    box-shadow:0 1px 2px rgba(11,30,58,.04),0 10px 26px rgba(11,30,58,.07);margin-bottom:28px}
+  .shot{border:1px solid var(--line);border-radius: 10px;overflow:hidden;background:#fff;
+    box-shadow: 0 1px 2px rgba(11,30,58,0.028), 0 10px 26px rgba(11,30,58,0.032);margin-bottom:28px}
   .shot img{width:100%;height:auto;display:block;aspect-ratio:1000/667;object-fit:cover}
 
 
   .f{margin-bottom:15px}
   .f label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--muted)}
-  .f input{width:100%;padding:12px 13px;border:1px solid var(--line-2);border-radius:8px;
+  .f input{width:100%;padding:12px 13px;border:1px solid var(--line-2);border-radius: 8px;
     font-size:15px;outline:none;background:#fff;font-family:var(--font);
     transition:border-color .16s,box-shadow .16s}
-  .f input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(5,89,179,.13)}
+  .f input:focus{border-color:var(--blue);box-shadow: 0 0 0 3px rgba(5,89,179,.13)}
   .r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   @media(max-width:520px){.r2{grid-template-columns:1fr}}
 
   .sec-l{font-size:12.5px;font-weight:600;color:var(--muted);margin:24px 0 10px}
 
   .m{display:grid;grid-template-columns:18px 1fr auto;gap:13px;align-items:center;
-    border:1px solid var(--line-2);border-radius:10px;padding:14px 15px;cursor:pointer;
+    border:1px solid var(--line-2);border-radius: 8px;padding:14px 15px;cursor:pointer;
     margin-bottom:9px;min-width:0;transition:border-color .16s,box-shadow .16s,background .16s}
   .m:hover{border-color:#B9CBE2}
-  .m.on{border-color:var(--blue);background:rgba(5,89,179,.03);box-shadow:0 0 0 2px rgba(5,89,179,.11)}
+  .m.on{border-color:var(--blue);background:rgba(5,89,179,.03);box-shadow: 0 0 0 2px rgba(5,89,179,.11)}
   .m:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-  .m-r{width:17px;height:17px;border:1.7px solid #C4D0E0;border-radius:50%;position:relative}
+  .m-r{width:17px;height:17px;border:1.7px solid #C4D0E0;border-radius: 50%;position:relative}
   .m.on .m-r{border-color:var(--blue)}
-  .m.on .m-r::after{content:"";position:absolute;inset:3.2px;border-radius:50%;background:var(--blue)}
+  .m.on .m-r::after{content:"";position:absolute;inset:3.2px;border-radius: 50%;background:var(--blue)}
   .m-t{font-family:var(--font-display);font-size:14.5px;font-weight:600;letter-spacing:-.01em;min-width:0}
   .m-t span{display:block;font-family:var(--font);font-size:12.5px;font-weight:400;
     color:var(--muted);margin-top:3px;letter-spacing:0}
-  .m-x{font-size:11px;font-weight:600;color:var(--green);background:#E6F6EF;border-radius:5px;
+  .m-x{font-size:11px;font-weight:600;color:var(--green);background:#E6F6EF;border-radius: 5px;
     padding:3px 8px;white-space:nowrap}
   @media(max-width:400px){.m-x{display:none}}
   .mp{padding:14px 0 4px}
@@ -137,14 +137,14 @@
   .fine{font-size:12.5px;color:#8A99AB;text-align:center;margin:16px 0 0;line-height:1.6}
   .fine a{color:var(--muted)}
   .note{display:inline-block;font-size:12px;font-weight:600;color:#8A5A00;background:#FFF6E5;
-    border:1px dashed #E8C57A;border-radius:6px;padding:4px 9px;margin-top:12px}
+    border:1px dashed #E8C57A;border-radius: 6px;padding:4px 9px;margin-top:12px}
   .pw{text-align:center;font-size:12px;color:#8A99AB;margin-top:28px;padding-top:22px;
     border-top:1px solid var(--line)}
 
   .mbar{display:none}
   @media(max-width:940px){.mbar{display:flex;position:fixed;inset:auto 0 0 0;z-index:40;
     background:#fff;border-top:1px solid var(--line);padding:11px 20px;align-items:center;gap:14px;
-    box-shadow:0 -4px 18px rgba(11,30,58,.09)}
+    box-shadow: 0 -4px 18px rgba(11,30,58,0.041)}
     .mbar div{flex:1}
     .mbar b{display:block;font-family:var(--font-display);font-size:19px;font-weight:700;
       letter-spacing:-.03em;font-variant-numeric:tabular-nums}

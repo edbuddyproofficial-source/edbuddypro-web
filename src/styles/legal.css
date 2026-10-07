@@ -26,10 +26,7 @@
   body{margin:0;font-family:var(--font);color:var(--black);background:#fff;
     overflow-x:clip;padding-bottom:60px;-webkit-font-smoothing:antialiased}
   a{color:var(--blue)}
-  .page-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:linear-gradient(#E4E9F0 1px,transparent 1px),
-      linear-gradient(90deg,#E4E9F0 1px,transparent 1px);
-    background-size:48px 48px;opacity:.26}
+  
 
   .lg{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 28px;
     display:grid;grid-template-columns:322px minmax(0,1fr);gap:0;align-items:start}
@@ -42,7 +39,7 @@
   .lg-updated{font-size:13px;color:#6B7A8F;margin:0 0 28px}
   .lg-toc{display:flex;flex-direction:column;gap:1px;border-top:1px solid #E4E9F0;padding-top:18px}
   .lg-toc a{font-size:14.5px;color:#52627A;text-decoration:none;padding:9px 12px;
-    border-radius:9px;line-height:1.4;transition:background .16s,color .16s}
+    border-radius: 9px;line-height:1.4;transition:background .16s,color .16s}
   .lg-toc a:hover{background:#EEF4FC;color:var(--blue)}
   .lg-toc a.on{background:#EEF4FC;color:var(--blue);font-weight:600}
 
@@ -85,11 +82,11 @@
   }
 
   .lg-spot{display:block;width:100%;max-width:196px;height:auto;margin:0 0 26px}
-  .lg-ex{margin:20px 0 0;border:1px solid #E4E9F0;border-radius:12px;background:#FBFCFE}
+  .lg-ex{margin:20px 0 0;border:1px solid #E4E9F0;border-radius: 8px;background:#FBFCFE}
   .lg-ex[open]{background:#fff}
   .lg-ex summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;
     padding:14px 16px;font-family:var(--font-display);font-size:15px;font-weight:600;
-    color:var(--blue);border-radius:12px}
+    color:var(--blue);border-radius: 8px}
   .lg-ex summary::-webkit-details-marker{display:none}
   .lg-ex summary:hover{background:#F5F8FC}
   .lg-ex-chev{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;

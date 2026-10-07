@@ -61,7 +61,7 @@ img { max-width: 100%; display: block; }
 .so-built { padding: 56px 0; }
 .so-built .so-wrap { display: grid; gap: 36px; }
 .so-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; margin: 26px 0 0; }
-.so-fact b { display: block; font: 800 30px/1 var(--font-display); color: var(--navy); letter-spacing: -.02em; }
+.so-fact b { display: block; font: 800 clamp(24px, 6vw, 30px)/1 var(--font-display); color: var(--navy); letter-spacing: -.02em; }
 .so-fact span { display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: var(--muted); }
 
 .so-live { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center;
@@ -79,7 +79,6 @@ img { max-width: 100%; display: block; }
 
 @media (min-width: 560px) {
   .so-row { flex-direction: row; }
-  .so-facts { grid-template-columns: repeat(4, 1fr); }
 }
 @media (min-width: 900px) {
   .so-wrap { padding: 0 32px; }
