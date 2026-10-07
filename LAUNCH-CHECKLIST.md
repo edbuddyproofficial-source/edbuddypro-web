@@ -15,6 +15,7 @@ These need a business decision or information only you have. The site works with
 - [ ] **Read the new content pages.** About, the blog (3 articles), the 3 guides, the prompt library (30 prompts) and the 3 free lessons were written for launch. Read them once and change anything that doesn't sound like edBuddy. Articles are signed "edBuddy Pro team" and dated 7 Oct 2026.
 - [ ] **Certificate IDs.** `/verify` sends requests to the inbox. Keep a list of issued certificate IDs (or add lookup to the LMS) so you can answer them.
 - [ ] **Webinars.** `/resources/webinars` collects invite requests and says no session is scheduled yet. When you set a date, add it to that page.
+- [ ] **Login button.** It opens `/login`, which explains where learners find their access link and lets them request it again (to the inbox). When the learning platform is live, send Login straight to it: add `{ "source": "/login", "destination": "<LMS login URL>", "permanent": false }` to `redirects` in `vercel.json`.
 - [ ] **Leads backend.** Set `leads.endpoint` in `site.config.json` (see README → Connecting the forms).
 - [ ] **Razorpay.** Wire the payment button (see README → Connecting payments).
 - [ ] **Phone number.** Add it to `site.config.json → phone`. The "Call us" item appears in the bottom bar once it's set.

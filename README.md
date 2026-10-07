@@ -36,6 +36,8 @@ src/
     blog.html                 → /blog                 (+ blog/*.html, one per article)
     free-lessons.html         → /free-lessons         (3 free HR lessons)
     verify.html               → /verify               (certificate verification)
+    search.html               → /search               (site search; index built into dist/search-index.json)
+    login.html                → /login                (learner login help until the LMS URL is set)
   partials/             ← shared pieces, dropped in with <!-- @include name -->
     head.html                 meta, favicon, fonts, base styles, analytics
     nav.html  footer.html  bottom-bar.html
@@ -70,7 +72,7 @@ The build then:
 - removes HTML comments and the legal pages' drafting notes (listed in `reports/open-legal-items.md`)
 - points images at the CDN and gives each image a content hash in its name, so it can be cached forever
 - stamps CSS/JS URLs with a version so browsers always get the latest after a deploy
-- writes `sitemap.xml` and `robots.txt`
+- writes `sitemap.xml`, `robots.txt` and `search-index.json` (powers the nav search box)
 - **fails** if any internal link, `#anchor` or image is broken, or an image has no alt text
 
 ---
@@ -142,7 +144,7 @@ goes through one function, `EBP.submitLead(kind, data)` in `src/scripts/site.js`
   with their details addressed to `hello@edbuddypro.com`. No enquiry is lost, but it relies on the visitor sending that email.
 - **When the backend is ready:** put its URL in `leads.endpoint`. Every form will then `POST` JSON:
   ```json
-  { "kind": "callback | enquiry | business | newsletter | waitlist | webinar | verify | enrol", "page": "/courses/ai-for-hr",
+  { "kind": "callback | enquiry | business | newsletter | waitlist | webinar | verify | access | enrol", "page": "/courses/ai-for-hr",
     "data": { "name": "…", "email": "…" }, "at": "2026-10-07T10:00:00.000Z" }
   ```
   Return any 2xx and the visitor sees a confirmation. Anything else shows an error with the email address.

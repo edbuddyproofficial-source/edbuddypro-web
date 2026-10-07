@@ -28,17 +28,22 @@
       </div>
       </li>
       
-      <li class="nav-secondary">
-        <a href="/resources">Resources</a>
+      <li class="nav-search">
+        <form action="/search" method="get" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" name="q" placeholder="Search resources…" aria-label="Search resources" autocomplete="off">
+        </form>
       </li>
       <li class="nav-secondary">
-        <a href="/for-business">For business</a>
+        <a href="/for-business">For Business</a>
+        <a href="/blog">Blogs</a>
+        <a href="/about">About Us</a>
       </li>
     </ul>
 
     <!-- Right CTAs -->
     <div class="nav-right">
-      <button type="button" class="btn-primary" data-callback-open>Request a callback</button>
+      <a href="/login" class="btn-primary">Login</a>
     </div>
 
     <!-- Mobile hamburger -->
@@ -58,11 +63,16 @@
       <div class="nm-panel" hidden><a class="nmc" href="/courses/ai-for-hr"><span class="nmc-ph"><img src="/assets/img/thumb-hr.webp" alt="" loading="lazy"></span><span class="nmc-bd"><span class="nmc-eyebrow">HR</span><span class="nmc-t">AI for HR Professionals</span><span class="nmc-d">Screening, reviews and people analytics</span><span class="nmc-meta"><svg class="mn-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><use href="/assets/icons.svg#i-033e0f0"/></svg>6 hrs &middot; self-paced</span></span></a><a class="nmc" href="/courses/ai-for-finance"><span class="nmc-ph"><img src="/assets/img/thumb-finance.webp" alt="" loading="lazy"></span><span class="nmc-bd"><span class="nmc-eyebrow">Finance</span><span class="nmc-t">AI for Finance Teams</span><span class="nmc-d">Variance analysis, forecasts and board packs</span><span class="nmc-meta">Opening soon</span></span></a><a class="nmc" href="/courses/ai-for-marketing"><span class="nmc-ph"><img src="/assets/img/thumb-marketing.webp" alt="" loading="lazy"></span><span class="nmc-bd"><span class="nmc-eyebrow">Marketing</span><span class="nmc-t">AI for Marketing Professionals</span><span class="nmc-d">Audiences, campaigns and attribution</span><span class="nmc-meta">Opening soon</span></span></a><a class="nmc" href="/courses/ai-for-sales"><span class="nmc-ph"><img src="/assets/img/thumb-sales.webp" alt="" loading="lazy"></span><span class="nmc-bd"><span class="nmc-eyebrow">Sales</span><span class="nmc-t">AI for Sales Professionals</span><span class="nmc-d">Account research, outreach and pipeline</span><span class="nmc-meta">Opening soon</span></span></a><a class="nmc" href="/courses/ai-for-product"><span class="nmc-ph"><img src="/assets/img/thumb-product.webp" alt="" loading="lazy"></span><span class="nmc-bd"><span class="nmc-eyebrow">Product</span><span class="nmc-t">AI for Product Managers</span><span class="nmc-d">Research, roadmaps and specs</span><span class="nmc-meta">Opening soon</span></span></a><a class="nmc" href="/#roles"><span class="nmc-ph"><img src="/assets/img/thumb-operations.webp" alt="" loading="lazy"></span><span class="nmc-bd"><span class="nmc-eyebrow">Operations</span><span class="nmc-t">AI for Operations Teams</span><span class="nmc-d">Reporting, chasing and handoffs</span><span class="nmc-meta">Opening soon</span></span></a>
         <a class="nm-all" href="/#courses">View all courses</a>
       </div>
+    <form class="nm-search" action="/search" method="get" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" name="q" placeholder="Search resources…" aria-label="Search resources" autocomplete="off">
+    </form>
+    <a href="/for-business" class="nm-link">For Business</a>
+    <a href="/blog" class="nm-link">Blogs</a>
     <a href="/resources" class="nm-link">Resources</a>
-    <a href="/for-business" class="nm-link">For business</a>
-    <a href="/about" class="nm-link">About us</a>
+    <a href="/about" class="nm-link">About Us</a>
     <div class="nm-actions">
-      <button type="button" class="btn-primary nm-btn" data-callback-open>Request a callback</button>
+      <a href="/login" class="btn-primary nm-btn">Login</a>
     </div>
   </div>
 </nav>

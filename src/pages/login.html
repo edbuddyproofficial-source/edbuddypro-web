@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learner login | edBuddy Pro</title>
+<meta name="description" content="Log in to your edBuddy Pro courses. Can't find your access details? Request them again and we'll email them to you.">
+<meta name="robots" content="noindex, follow">
+  <!-- @include head -->
+  <link rel="stylesheet" href="/styles/resources.css">
+  <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
+</head>
+<body class="has-fixed-nav">
+
+<!-- @include nav -->
+
+<!-- When the learning platform (Edmingle) is live, send /login straight to it:
+     add  { "source": "/login", "destination": "https://<your-lms-login-url>", "permanent": false }
+     to "redirects" in vercel.json. This page is the stand-in until then. -->
+<main>
+<section class="rs-sec">
+  <div class="rs-wrap rs-split">
+    <div>
+      <p class="rs-kicker">Learner login</p>
+      <h1 class="rs-h1">Welcome back</h1>
+      <p class="rs-lead">Your course runs on our learning platform. When you enrol, we email you a personal link and login details to get straight into your lessons.</p>
+      <ol class="rs-steps sr-steps">
+        <li><b>Search your inbox</b>Look for an email from edBuddy Pro sent when you enrolled. Check spam or promotions too.</li>
+        <li><b>Use the link in that email</b>It takes you to your course. Bookmark the page so it's one click next time.</li>
+        <li><b>Still stuck?</b>Request your access details with the form and we'll email them to you.</li>
+      </ol>
+    </div>
+
+    <div class="rs-panel">
+      <h2 class="rs-h2">Resend my access</h2>
+      <p class="rs-sub">Use the email address you enrolled with.</p>
+      <form class="rs-form" data-lead="access">
+        <div class="rs-field"><label for="lg-name">Your name</label><input id="lg-name" name="name" autocomplete="name" required></div>
+        <div class="rs-field"><label for="lg-email">Email you enrolled with</label><input id="lg-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="rs-field"><label for="lg-course">Course</label>
+          <select id="lg-course" name="course"><option>AI for HR Professionals</option><option>Not sure</option></select></div>
+        <button class="rs-btn" type="submit">Email my access details</button>
+        <p class="rs-fine">Not enrolled yet? <a href="/courses/ai-for-hr">See the HR course</a> or <a href="/free-lessons">try 3 lessons free</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- @include footer -->
+<!-- @include bottom-bar -->
+
+<script src="/scripts/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search | edBuddy Pro</title>
+<meta name="description" content="Search edBuddy Pro courses, free guides, prompts, lessons and articles.">
+<meta name="robots" content="noindex, follow">
+  <!-- @include head -->
+  <link rel="stylesheet" href="/styles/resources.css">
+  <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
+</head>
+<body class="has-fixed-nav">
+
+<!-- @include nav -->
+
+<main>
+<header class="rs-hero">
+  <div class="rs-narrow">
+    <p class="rs-kicker">Search</p>
+    <h1 class="rs-h1">Search edBuddy Pro</h1>
+    <form id="sr-form" class="sr-form" action="/search" method="get" role="search">
+      <label class="sr-label" for="sr-q">Search courses, guides, prompts and articles</label>
+      <div class="sr-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="sr-q" name="q" type="search" placeholder="e.g. job description, DPDP, interview" autocomplete="off" autofocus>
+      </div>
+    </form>
+  </div>
+</header>
+
+<section class="rs-narrow sr-body">
+  <p id="sr-status" class="sr-status" aria-live="polite"></p>
+  <ol id="sr-results" class="sr-results"></ol>
+
+  <h2 class="sr-browse">Popular</h2>
+  <ul class="sr-pop">
+    <li><a href="/courses/ai-for-hr">AI for HR Professionals</a></li>
+    <li><a href="/free-lessons">Preview 3 lessons free</a></li>
+    <li><a href="/resources/prompt-library">Prompt library</a></li>
+    <li><a href="/resources/guides">Free guides</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/for-business">For business</a></li>
+  </ul>
+</section>
+</main>
+
+<!-- @include footer -->
+<!-- @include bottom-bar -->
+
+<script src="/scripts/site.js" defer></script>
+<script src="/scripts/search.js" defer></script>
+</body>
+</html>

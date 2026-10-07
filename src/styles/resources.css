@@ -246,3 +246,28 @@ a { color: var(--blue); }
 .rs-hero .ls-nav { margin-top: 28px; }
 .rs-prose.flat { padding: 0; }
 .rs-btns.spaced { margin-top: 32px; }
+
+/* ── search ── */
+.sr-form { margin-top: 26px; }
+.sr-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sr-box { display: flex; align-items: center; gap: 12px; height: 58px; padding: 0 18px; border: 1.5px solid #0a0a0a;
+  border-radius: 10px; background: #fff; color: var(--muted); }
+.sr-box:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(5, 89, 179, .16); }
+.sr-box svg { width: 20px; height: 20px; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+.sr-box input { flex: 1; min-width: 0; border: 0; outline: none; background: none; font: 500 18px var(--font); color: var(--ink); }
+.sr-body { padding-top: 28px; padding-bottom: 56px; }
+.sr-status { margin: 0 0 16px; font-size: 15px; color: var(--muted); }
+.sr-results { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.sr-results:empty { border-top: 0; }
+.sr-hit { display: grid; gap: 4px; padding: 18px 4px; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; }
+.sr-hit:hover .sr-t { color: var(--blue); }
+.sr-sec { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.sr-t { font: 700 19px/1.3 var(--font-display); color: var(--ink); transition: color .2s; }
+.sr-x { font-size: 15px; line-height: 1.55; color: var(--muted); }
+.sr-x mark { background: #FFF1B8; color: var(--ink); border-radius: 2px; padding: 0 1px; }
+.sr-browse { margin: 40px 0 14px; font: 700 14px var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.sr-pop { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.sr-pop a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid #D5DEEA;
+  border-radius: 999px; font-size: 14.5px; font-weight: 600; color: #33435A; text-decoration: none; }
+.sr-pop a:hover { border-color: var(--blue); color: var(--blue); }
+.sr-steps { margin-top: 28px; }

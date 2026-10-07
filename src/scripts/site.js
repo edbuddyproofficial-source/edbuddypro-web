@@ -65,7 +65,7 @@ var EBP = window.EBP = window.EBP || {};
     var subject = { callback: 'Call-back request', newsletter: 'Newsletter sign-up',
       business: 'Team training enquiry', enquiry: 'Course enquiry',
       enrol: 'Enrolment: AI for HR Professionals', waitlist: 'Waitlist',
-      webinar: 'Webinar invite', verify: 'Certificate verification' }[kind] || 'Enquiry';
+      webinar: 'Webinar invite', verify: 'Certificate verification', access: 'Resend course access' }[kind] || 'Enquiry';
     location.href = 'mailto:' + EBP.config.email + '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(lines.join('\n') + '\n\nSent from ' + location.href);
     return Promise.resolve();

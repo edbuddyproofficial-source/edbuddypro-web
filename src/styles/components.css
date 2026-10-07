@@ -1086,3 +1086,14 @@
   .ft-cols > div:nth-child(2) { grid-row: span 2; }
   .ft-cols a, .ft-cols li, .ft-linkbtn { overflow-wrap: normal; word-break: normal; hyphens: none; }
 }
+
+/* ── nav search (desktop pill + mobile menu field) ── */
+.nav-search form { display: flex; align-items: center; gap: 9px; width: 100%; margin: 0; }
+.nav-search:focus-within { border-color: #0559B3; box-shadow: 0 0 0 3px rgba(5,89,179,.16); }
+.nm-search { display: flex; align-items: center; gap: 10px; margin: 10px 0 6px; padding: 0 14px; height: 48px;
+  border: 1.5px solid #0a0a0a; border-radius: 8px; color: #5A6B82; }
+.nm-search:focus-within { border-color: #0559B3; }
+.nm-search svg { width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+.nm-search input { flex: 1; min-width: 0; border: 0; outline: none; background: none;
+  font: 500 16px var(--font, 'Figtree', -apple-system, sans-serif); color: #0B1220; }
+.nm-search input::placeholder { color: #5A6B82; }

@@ -164,6 +164,30 @@ for (const page of pages) {
   if (used.size < all) warnings.push(`icons.svg: ${all - used.size} unused symbols left out of the build`);
 }
 
+// site search index (used by /search and the nav search box)
+{
+  const text = (h) => unesc(h.replace(/<(script|style|svg|nav|form)\b[\s\S]*?<\/\1>/g, ' ')
+    .replace(/<[^>]+>/g, ' ').replace(/&#?\w+;/g, ' ')).replace(/\s+/g, ' ').trim();
+  const skip = new Set(['/404', '/checkout', '/search', '/login']);
+  const index = pages.filter((p) => !skip.has(p.route)).map((p) => {
+    const h = built[p.route];
+    const body = h.slice(Math.max(0, h.indexOf('id="content"')), h.indexOf('<footer') > 0 ? h.indexOf('<footer') : undefined);
+    const heads = [...body.matchAll(/<h[1-3]\b[^>]*>([\s\S]*?)<\/h[1-3]>/g)].map((m) => text(m[1])).join(' · ');
+    const section = p.route.startsWith('/blog') ? 'Blog' : p.route.startsWith('/resources/guides/') ? 'Guide'
+      : p.route.startsWith('/courses/') ? 'Course' : p.route.startsWith('/legal/') ? 'Legal'
+      : p.route.startsWith('/resources') || p.route === '/free-lessons' || p.route === '/verify' ? 'Resources' : 'Page';
+    return {
+      u: p.route,
+      t: unesc((h.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '').replace(/\s*\|\s*edBuddy Pro$/, '').trim(),
+      d: unesc((h.match(/<meta name="description" content="([^"]*)"/) || [])[1] || ''),
+      s: section,
+      h: heads.slice(0, 1200),
+      x: text(body).slice(0, 4000),
+    };
+  });
+  write(join(DIST, 'search-index.json'), JSON.stringify(index));
+}
+
 // ── 3. sitemap + robots ─────────────────────────────────────────
 const today = new Date().toISOString().slice(0, 10);
 const indexable = pages.filter((p) => !site.sitemapExclude.includes(p.route)
