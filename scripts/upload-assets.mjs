@@ -12,12 +12,13 @@
  * Uploaded names are recorded in scripts/r2-uploaded.txt (committed), so
  * each image is only ever uploaded once.
  *
- * Auth: CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID from .env.local
- * (deploy.sh and setup.sh load it for you).
+ * Auth: the edbuddy Cloudflare browser login (setup.sh / deploy.sh handle it),
+ * kept in ~/.edbuddy-cli so it never touches another project's login.
  */
 import { spawnSync } from 'node:child_process';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { extname, join, dirname } from 'node:path';
+import { homedir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { imageManifest } from './lib/assets.mjs';
 
@@ -42,7 +43,8 @@ for (const [local, key] of todo) {
     '--file', file,
     '--content-type', TYPES[extname(file).toLowerCase()] || 'application/octet-stream',
     '--cache-control', 'public, max-age=31536000, immutable',
-    '--remote'], { stdio: ['ignore', 'pipe', 'pipe'], encoding: 'utf8' });
+    '--remote'], { stdio: ['ignore', 'pipe', 'pipe'], encoding: 'utf8',
+    env: { ...process.env, XDG_CONFIG_HOME: process.env.XDG_CONFIG_HOME || join(homedir(), '.edbuddy-cli') } });
   if (r.status === 0) {
     done.add(key);
     writeFileSync(LOG, [...done].sort().join('\n') + '\n');

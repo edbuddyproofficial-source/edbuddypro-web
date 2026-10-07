@@ -47,7 +47,7 @@ scripts/
   deploy.sh             ← every release
   lib.sh                ← shared settings (repo, bucket, domain) and helpers
 vercel.json             ← clean URLs, redirects from old .html links, security + cache headers
-.env.example            ← copy to .env.local for the Cloudflare token (never committed)
+.env.example            ← optional: Cloudflare API token instead of browser login (never committed)
 ```
 
 ### What the build does for you
@@ -87,30 +87,24 @@ Use `.webp` images around 1200–1600px wide. Run `npm run dev` and look before 
 ## Deploying
 
 Git is the only way to production: `deploy.sh` pushes to GitHub and Vercel builds from there.
-This project uses its **own** Vercel login (stored in `~/.vercel-edbuddy`) and its **own** Cloudflare
-token (in `.env.local`), so it never signs your Mac out of any other project.
+Vercel and Cloudflare both log in through the browser, like Wisherly, but this project keeps its **own**
+logins (`~/.vercel-edbuddy` and `~/.edbuddy-cli`). Logging in here never signs any other project out.
+If a login link opens in the wrong Chrome profile, copy it into the edbuddy profile.
 
 ### First-time setup (once per Mac)
 
 1. **Folder:** the project lives at `~/Developer/edbuddypro`.
 2. **GitHub access:** your Mac must be able to push to `edbuddyproofficial-source/edbuddypro-web`.
    If your usual GitHub account isn't on that org, invite it under repo Settings → Collaborators and accept.
-3. **Cloudflare token:**
-   ```bash
-   cd ~/Developer/edbuddypro
-   cp .env.example .env.local
-   open -e .env.local
-   ```
-   Fill in `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`. The file explains where to find each.
-4. **Run setup:**
+3. **Run setup:**
    ```bash
    ./scripts/setup.sh
    ```
-   It pushes the code, creates the R2 bucket, connects `cdn.edbuddypro.com`, uploads the images,
+   It pushes the code, logs in to Cloudflare in the browser, creates the R2 bucket, connects `cdn.edbuddypro.com`, uploads the images,
    logs in to Vercel as the edbuddy account, links the project, sets `CDN_URL`, connects GitHub,
    turns on analytics, adds the domains and does the first production deploy.
    Where a step needs the dashboard, it says exactly what to click and waits.
-5. **DNS:** add the two records the script prints in Cloudflare → edbuddypro.com → DNS, set to **DNS only**.
+4. **DNS:** add the two records the script prints in Cloudflare → edbuddypro.com → DNS, set to **DNS only**.
 
 ### Every release
 

@@ -5,7 +5,7 @@
 #      ./scripts/setup.sh
 #
 #  1. GitHub     push this repo to edbuddyproofficial-source/edbuddypro-web
-#  2. Cloudflare create the R2 bucket, connect cdn.edbuddypro.com, upload images
+#  2. Cloudflare log in (browser), create the R2 bucket, connect cdn.edbuddypro.com, upload images
 #  3. Vercel     log in (edbuddy account only), link the project, set CDN_URL,
 #                connect GitHub, turn on analytics, add the domains
 #  4. First production deploy
@@ -16,13 +16,6 @@ source "$(dirname "$0")/lib.sh"
 need git  "Install Xcode command line tools: xcode-select --install"
 need node "Install Node 18+ from nodejs.org"
 printf "\n${BLD}edBuddy Pro: one-time setup${NC}\n"
-
-# ── 0. Cloudflare token ─────────────────────────────────────
-if [ ! -f .env.local ]; then
-  cp .env.example .env.local
-  die "Created .env.local. Fill in CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN (README → First-time setup), then run this again."
-fi
-need_cloudflare
 
 # ── 1. GitHub ───────────────────────────────────────────────
 step "1/4  GitHub → ${GH_REPO}"
@@ -38,6 +31,12 @@ ok "code is on GitHub"
 
 # ── 2. Cloudflare R2 ────────────────────────────────────────
 step "2/4  Cloudflare R2 → ${R2_BUCKET} on ${CDN_HOST}"
+need_cloudflare
+who="$(wr whoami 2>/dev/null | grep -Eo '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+' | head -1 || true)"
+[ -n "${CLOUDFLARE_API_TOKEN:-}" ] && who="API token from .env.local"
+ok "Cloudflare: ${who:-logged in}"
+read -r -p "  Is that the edbuddy Cloudflare account? (y/N) " c
+[ "$c" = "y" ] || [ "$c" = "Y" ] || die "Run  XDG_CONFIG_HOME=~/.edbuddy-cli npx wrangler logout  and then this script again."
 if wr r2 bucket list 2>/dev/null | grep -Eq "name:[[:space:]]+${R2_BUCKET}\$"; then ok "bucket exists"
 else wr r2 bucket create "$R2_BUCKET" >/dev/null && ok "bucket created"; fi
 
