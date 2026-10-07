@@ -88,7 +88,7 @@ You need Node 18+, git and the [GitHub CLI](https://cli.github.com). Use the edb
 1. **Domain on Cloudflare.** Make sure `edbuddypro.com` is added to the Cloudflare account and its nameservers point to Cloudflare. Copy the **Zone ID** from the domain's Overview page.
 2. Run:
    ```bash
-   GH_OWNER=<edbuddy-github-username> CF_ZONE_ID=<zone-id> ./deploy.sh setup
+   GH_OWNER=edbuddyproofficial-source CF_ZONE_ID=<zone-id> ./deploy.sh setup
    ```
    This will:
    - create the private GitHub repo and push

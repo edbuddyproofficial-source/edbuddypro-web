@@ -18,7 +18,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-REPO="edbuddypro"
+REPO="edbuddypro-web"
 BUCKET="${R2_BUCKET:-edbuddypro-assets}"
 DOMAIN="edbuddypro.com"
 CDN_HOST="cdn.edbuddypro.com"
