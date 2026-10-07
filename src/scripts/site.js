@@ -71,8 +71,8 @@ var EBP = window.EBP = window.EBP || {};
   };
 
   function fieldName(el) {
-    return el.name || el.getAttribute('aria-label') || el.id ||
-      (el.labels && el.labels[0] && el.labels[0].textContent) || el.placeholder || 'field';
+    return el.name || el.getAttribute('aria-label') ||
+      (el.labels && el.labels[0] && el.labels[0].textContent) || el.id || el.placeholder || 'field';
   }
   function collect(form) {
     var out = {};

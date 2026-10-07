@@ -207,16 +207,16 @@
     </div>
     <form class="lead-form" data-lead="enquiry">
       <div class="lead-row2">
-        <div class="lead-field"><label>Full name</label><input type="text" placeholder="Jane Doe"></div>
-        <div class="lead-field"><label>Work email</label><input type="email" placeholder="jane@company.com"></div>
+        <div class="lead-field"><label for="lfName">Full name</label><input id="lfName" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required></div>
+        <div class="lead-field"><label for="lfEmail">Work email</label><input id="lfEmail" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required></div>
       </div>
-      <div class="lead-field"><label>Your role</label>
-        <select>
+      <div class="lead-field"><label for="lfRole">Your role</label>
+        <select id="lfRole" name="role">
           <option value="">Select your role</option>
           <option>HR</option><option>Finance</option><option>Product</option><option>Marketing</option><option>Sales</option><option>Operations</option><option>Data &amp; Analytics</option><option>Customer Support</option><option>Leadership</option><option>Other</option>
         </select>
       </div>
-      <div class="lead-field"><label>What do you want to achieve?</label><textarea placeholder="e.g. automate reporting, write better with AI…"></textarea></div>
+      <div class="lead-field"><label for="lfGoal">What do you want to achieve?</label><textarea id="lfGoal" name="goal" placeholder="e.g. automate reporting, write better with AI…"></textarea></div>
       <button type="submit" class="lead-submit">Send &amp; get my plan</button>
     </form>
   </div>
