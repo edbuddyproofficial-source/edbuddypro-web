@@ -12,6 +12,9 @@ These need a business decision or information only you have. The site works with
 
 ## Soon after launch
 
+- [ ] **Read the new content pages.** About, the blog (3 articles), the 3 guides, the prompt library (30 prompts) and the 3 free lessons were written for launch. Read them once and change anything that doesn't sound like edBuddy. Articles are signed "edBuddy Pro team" and dated 7 Oct 2026.
+- [ ] **Certificate IDs.** `/verify` sends requests to the inbox. Keep a list of issued certificate IDs (or add lookup to the LMS) so you can answer them.
+- [ ] **Webinars.** `/resources/webinars` collects invite requests and says no session is scheduled yet. When you set a date, add it to that page.
 - [ ] **Leads backend.** Set `leads.endpoint` in `site.config.json` (see README → Connecting the forms).
 - [ ] **Razorpay.** Wire the payment button (see README → Connecting payments).
 - [ ] **Phone number.** Add it to `site.config.json → phone`. The "Call us" item appears in the bottom bar once it's set.
@@ -35,7 +38,7 @@ These need a business decision or information only you have. The site works with
 | 3 | Clear CTA | ✓ "Request a callback" in the nav on every page; Enrol on HR; Notify me on opening-soon pages |
 | 4 | FAQ | ✓ Homepage, HR course, business page |
 | 5 | robots.txt | ✓ Generated; checkout excluded |
-| 6 | sitemap.xml | ✓ Generated on every build (15 URLs) |
+| 6 | sitemap.xml | ✓ Generated on every build (29 URLs) |
 | 7 | Custom 404 | ✓ New "Module 404" page: shows the bad address and links to every course with its status |
 | 8 | Alt text | ✓ Build fails if an image has none; decorative images use `alt=""` |
 | 9 | Analytics | ✓ Vercel Web Analytics + Speed Insights (cookieless); GA4 ready behind consent |

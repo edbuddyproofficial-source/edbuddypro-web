@@ -29,6 +29,13 @@ src/
     courses/ai-for-hr.html    → /courses/ai-for-hr        (full course page)
     courses/ai-for-*.html     → /courses/ai-for-finance … (opening-soon pages)
     legal/*.html              → /legal/privacy-policy …
+    about.html                → /about
+    resources.html            → /resources            (hub for everything below)
+    resources/guides.html     → /resources/guides     (+ guides/*.html, one per guide)
+    resources/prompt-library.html, resources/webinars.html
+    blog.html                 → /blog                 (+ blog/*.html, one per article)
+    free-lessons.html         → /free-lessons         (3 free HR lessons)
+    verify.html               → /verify               (certificate verification)
   partials/             ← shared pieces, dropped in with <!-- @include name -->
     head.html                 meta, favicon, fonts, base styles, analytics
     nav.html  footer.html  bottom-bar.html
@@ -78,6 +85,8 @@ The build then:
 | Swap a photo | replace the file in `src/assets/img/` with the **same name**, then `./scripts/deploy.sh` |
 | Add a photo | drop it in `src/assets/img/`, reference it as `/assets/img/name.webp` |
 | Add a page | create `src/pages/new-page.html` (copy a legal page as a starting point) |
+| Add a blog post or guide | copy an existing one in `src/pages/blog/` or `src/pages/resources/guides/`, then add a card to `blog.html` or `resources/guides.html` |
+| Add a prompt | copy an `<article class="pl-item">` in `src/pages/resources/prompt-library.html` and set `data-role` |
 | Open a course for enrolment | rebuild its page from `courses/ai-for-hr.html`, then update the nav, homepage cards and footer |
 
 Use `.webp` images around 1200–1600px wide. Run `npm run dev` and look before you push.
@@ -126,14 +135,14 @@ When it looks right: `git checkout main && git merge my-change && ./scripts/depl
 
 ## Connecting the forms
 
-Every form on the site (call-back panel, course enquiry, B2B, newsletter, waitlist, checkout)
+Every form on the site (call-back panel, course enquiry, B2B, newsletter, waitlist, webinar, certificate verification, checkout)
 goes through one function, `EBP.submitLead(kind, data)` in `src/scripts/site.js`.
 
 - **Today:** `leads.endpoint` in `site.config.json` is empty, so a submit opens the visitor's email app
   with their details addressed to `hello@edbuddypro.com`. No enquiry is lost, but it relies on the visitor sending that email.
 - **When the backend is ready:** put its URL in `leads.endpoint`. Every form will then `POST` JSON:
   ```json
-  { "kind": "callback | enquiry | business | newsletter | waitlist | enrol", "page": "/courses/ai-for-hr",
+  { "kind": "callback | enquiry | business | newsletter | waitlist | webinar | verify | enrol", "page": "/courses/ai-for-hr",
     "data": { "name": "…", "email": "…" }, "at": "2026-10-07T10:00:00.000Z" }
   ```
   Return any 2xx and the visitor sees a confirmation. Anything else shows an error with the email address.

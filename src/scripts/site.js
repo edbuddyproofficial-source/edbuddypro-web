@@ -64,7 +64,8 @@ var EBP = window.EBP = window.EBP || {};
       .map(function (k) { return k.charAt(0).toUpperCase() + k.slice(1) + ': ' + data[k]; });
     var subject = { callback: 'Call-back request', newsletter: 'Newsletter sign-up',
       business: 'Team training enquiry', enquiry: 'Course enquiry',
-      enrol: 'Enrolment: AI for HR Professionals', waitlist: 'Waitlist' }[kind] || 'Enquiry';
+      enrol: 'Enrolment: AI for HR Professionals', waitlist: 'Waitlist',
+      webinar: 'Webinar invite', verify: 'Certificate verification' }[kind] || 'Enquiry';
     location.href = 'mailto:' + EBP.config.email + '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(lines.join('\n') + '\n\nSent from ' + location.href);
     return Promise.resolve();

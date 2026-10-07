@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify an edBuddy Pro certificate | edBuddy Pro</title>
+<meta name="description" content="Employers and recruiters can confirm that an edBuddy Pro certificate is genuine. Send the certificate ID and the holder's name and we'll confirm by email.">
+  <!-- @include head -->
+  <link rel="stylesheet" href="/styles/resources.css">
+  <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
+</head>
+<body class="has-fixed-nav">
+
+<!-- @include nav -->
+
+<main>
+<header class="rs-hero">
+  <div class="rs-wrap">
+    <ol class="rs-crumbs"><li><a href="/">Home</a></li><li><a href="/resources">Resources</a></li><li>Verify a certificate</li></ol>
+    <p class="rs-kicker">Certificates</p>
+    <h1 class="rs-h1">Verify a certificate</h1>
+    <p class="rs-lead">For employers, recruiters and anyone checking a candidate's credentials. Send us the details on the certificate and we'll confirm whether it is genuine.</p>
+  </div>
+</header>
+
+<section class="rs-sec">
+  <div class="rs-wrap rs-split">
+    <div class="rs-panel">
+      <h2 class="rs-h2">Request verification</h2>
+      <p class="rs-sub">Enter the details exactly as they appear on the certificate.</p>
+      <form class="rs-form" data-lead="verify">
+        <div class="rs-field"><label for="vf-id">Certificate ID</label><input id="vf-id" name="certificate id" autocomplete="off" spellcheck="false" required><p class="rs-hint">Printed on the certificate, usually at the bottom.</p></div>
+        <div class="rs-field"><label for="vf-holder">Name on the certificate</label><input id="vf-holder" name="certificate holder" required></div>
+        <div class="rs-field"><label for="vf-course">Course</label>
+          <select id="vf-course" name="course">
+            <option>AI for HR Professionals</option>
+            <option>Not sure</option>
+          </select></div>
+        <div class="rs-field"><label for="vf-email">Your email</label><input id="vf-email" name="email" type="email" autocomplete="email" required><p class="rs-hint">We'll send the result here.</p></div>
+        <button class="rs-btn" type="submit">Verify certificate</button>
+        <p class="rs-fine">We only confirm whether a certificate is genuine and what it covers. We don't share any other information about the holder. See our <a href="/legal/privacy-policy">privacy policy</a>.</p>
+      </form>
+    </div>
+
+    <div>
+      <h2 class="rs-h2">What a certificate means</h2>
+      <p class="rs-sub">An edBuddy Pro certificate is issued when a learner completes a course, including its hands-on labs. It reflects work done, not attendance.</p>
+      <ol class="rs-steps">
+        <li><b>Completed every module</b>For AI for HR Professionals: 10 modules and 60 topics across hiring, onboarding, performance, people analytics, automation and governance.</li>
+        <li><b>Did the labs</b>39 practical labs on real HR artefacts, such as a JD bias audit, a CV screening rubric and a 30/60/90 onboarding plan.</li>
+        <li><b>Covered responsible use</b>Data privacy (including India's DPDP Act), bias auditing and where decisions must stay with a person.</li>
+      </ol>
+      <div class="rs-callout"><b>Seen a certificate you think is fake?</b><p>Tell us at <a href="mailto:{{site.email}}">{{site.email}}</a>. We take misuse of our name seriously.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- @include footer -->
+<!-- @include bottom-bar -->
+
+<script src="/scripts/site.js" defer></script>
+</body>
+</html>

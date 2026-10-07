@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview 3 lessons free: AI for HR Professionals | edBuddy Pro</title>
+<meta name="description" content="Three complete lessons from AI for HR Professionals, free: what generative AI really is, the anatomy of an HR prompt, and writing a bias-audited job description. Each ends with a 10-minute lab.">
+<meta name="ebp:og-image" content="/og/hr.png">
+  <!-- @include head -->
+  <link rel="stylesheet" href="/styles/resources.css">
+  <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
+</head>
+<body class="has-fixed-nav">
+
+<!-- @include nav -->
+
+<main>
+<header class="rs-hero">
+  <div class="rs-narrow">
+    <ol class="rs-crumbs"><li><a href="/">Home</a></li><li><a href="/courses/ai-for-hr">AI for HR Professionals</a></li><li>Free lessons</li></ol>
+    <p class="rs-kicker">Free preview · 3 lessons</p>
+    <h1 class="rs-h1">Try 3 lessons from AI for HR Professionals</h1>
+    <p class="rs-lead">One lesson each from modules 1, 2 and 3, exactly as they're taught: the idea, an HR example, then a lab you do on your own work. About 30 minutes in total. You need a free ChatGPT, Claude or Gemini account.</p>
+    <nav class="ls-nav" aria-label="Lessons">
+      <a href="#lesson-1"><small>Lesson 1 · Module 01</small><span>What generative AI really is</span></a>
+      <a href="#lesson-2"><small>Lesson 2 · Module 02</small><span>The anatomy of an HR prompt</span></a>
+      <a href="#lesson-3"><small>Lesson 3 · Module 03</small><span>A JD that passes a bias audit</span></a>
+    </nav>
+  </div>
+</header>
+
+<article class="rs-narrow rs-prose">
+
+  <!-- ── Lesson 1 ── -->
+  <section class="ls-lesson" id="lesson-1">
+    <div class="ls-head"><small>Lesson 1 · Module 01: Foundations of AI &amp; its impact on HR</small><h2>What generative AI really is, and what it isn't</h2><p>About 8 minutes, plus a 10-minute lab</p></div>
+
+    <p>Tools like ChatGPT, Claude and Gemini are built on <strong>large language models</strong> (LLMs). An LLM has been trained on an enormous amount of text and has learned to predict what words are likely to come next. When you ask it a question, it writes the answer one small piece at a time, each time choosing what fits best given everything before it.</p>
+    <p>That one idea explains most of what you'll experience at work:</p>
+    <ul>
+      <li><strong>It is excellent with language.</strong> Drafting, rewriting, summarising, changing tone, structuring messy notes. These are prediction problems, and it is very good at them.</li>
+      <li><strong>It doesn't know your company.</strong> It has never seen your policies, your people or your culture unless you give them to it in the conversation.</li>
+      <li><strong>It can be confidently wrong.</strong> If the most plausible-sounding answer isn't true, it may still write it, with no change in tone. This is often called a "hallucination".</li>
+      <li><strong>It has a working memory limit.</strong> Each tool can only consider a certain amount of text at once, called its <em>context window</em>. Very long conversations or documents can push earlier details out.</li>
+    </ul>
+
+    <h3>Three kinds of "automation" HR teams meet</h3>
+    <div class="rs-table-wrap">
+      <table class="rs-table">
+        <thead><tr><th>Type</th><th>How it works</th><th>HR example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rule-based</strong></td><td>Fixed if-this-then-that rules</td><td>Send a reminder when a probation date is 14 days away</td></tr>
+          <tr><td><strong>Traditional AI</strong></td><td>Learns a pattern from data to predict one thing</td><td>A model that scores attrition risk from tenure and engagement data</td></tr>
+          <tr><td><strong>Generative AI</strong></td><td>Generates new text, images or code from instructions</td><td>Draft a personalised onboarding plan for a new hire</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Generative AI is the most flexible of the three, and the one most likely to be used informally by your team today. That is why the rest of the course spends as much time on judgement and governance as on the tools themselves.</p>
+
+    <div class="rs-callout"><b>The working rule</b><p>Use generative AI to produce a strong first draft quickly. Keep the facts, the final judgement and anything about a real person with a human.</p></div>
+
+    <div class="ls-lab">
+      <small>Lab 1 · 10 minutes</small>
+      <h3>Find where it shines and where it slips</h3>
+      <ol>
+        <li>Open ChatGPT, Claude or Gemini.</li>
+        <li>Ask it to <strong>rewrite a short internal announcement</strong> you've written recently (remove any names first) so it is clearer and warmer. Note how good the result is.</li>
+        <li>Now ask: <em>"What is our company's leave policy for new joiners?"</em> Notice that it can't know, and see whether it says so or invents an answer.</li>
+        <li>Finally ask it a question about a recent labour law change in your state. Check the answer against an official source.</li>
+        <li>Write down one task from your week that suits generative AI, and one it shouldn't touch.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Lesson 2 ── -->
+  <section class="ls-lesson" id="lesson-2">
+    <div class="ls-head"><small>Lesson 2 · Module 02: Prompt engineering for HR professionals</small><h2>The anatomy of an HR prompt</h2><p>About 8 minutes, plus a 10-minute lab</p></div>
+
+    <p>Most HR professionals who say "I tried ChatGPT and the answers were generic" were giving it generic prompts. The tool can only work with what you tell it. A good prompt briefs it the way you'd brief a capable new colleague, using five parts:</p>
+    <ol>
+      <li><strong>Role:</strong> who it should act as. <em>"You are an experienced HR business partner in a mid-sized Indian IT services company."</em></li>
+      <li><strong>Task:</strong> one clear verb. <em>"Draft…", "Summarise…", "Compare…", "Critique…"</em></li>
+      <li><strong>Context:</strong> what it can't know. The audience, the situation, what's been tried, the constraints.</li>
+      <li><strong>Format:</strong> the shape of the answer. A table, five bullets, an email under 150 words.</li>
+      <li><strong>Limits:</strong> tone, things to avoid, policies to respect, and "ask me if anything is unclear".</li>
+    </ol>
+
+    <div class="rs-compare">
+      <div class="bad"><small>Generic</small>Write an email about the new hybrid work policy.</div>
+      <div class="good"><small>Briefed</small>You are an HR business partner. Draft an email to all 220 employees announcing our new hybrid policy: 3 office days a week (Tue–Thu) from 1 November, with exceptions agreed with managers. Many people are worried this means less flexibility. Acknowledge that honestly, explain the reason (more in-person collaboration on client projects), and link to the full policy. Warm, direct tone. Under 200 words. End with who to contact for questions.</div>
+    </div>
+
+    <h3>Bias-aware prompting</h3>
+    <p>In HR, the way you ask matters as much as what you ask. A prompt like <em>"Write a JD for a young, energetic sales executive"</em> invites age-biased output. Ask for criteria tied to the work instead, and add a limit such as <em>"Use inclusive language and avoid age- or gender-coded words."</em></p>
+
+    <h3>Iterate, don't restart</h3>
+    <p>Treat the first answer as a draft. A short, specific follow-up beats a new prompt: <em>"Shorter, and lead with the date"</em>, <em>"Too formal for Slack"</em>, or <em>"List the assumptions you made."</em></p>
+
+    <div class="ls-lab">
+      <small>Lab 2 · 10 minutes</small>
+      <h3>Rebuild one of your own prompts</h3>
+      <ol>
+        <li>Pick a real HR task coming up this week: an announcement, an interview plan, a policy explainer.</li>
+        <li>Write the one-line prompt you'd normally use. Run it and save the answer.</li>
+        <li>Now rewrite it using all five parts (use the template below). Run it in a new chat.</li>
+        <li>Compare the two answers. Which parts of the brief made the biggest difference?</li>
+        <li>Save your improved prompt somewhere you can reuse it.</li>
+      </ol>
+    </div>
+    <div class="rs-prompt">
+      <div class="rs-prompt-h">Lab template <button type="button" class="rs-copy" data-copy>Copy</button></div>
+<pre>You are [role].
+
+Task: [one clear verb + what you need].
+
+Context:
+- Audience: [who will read it]
+- Situation: [what is going on]
+- Constraints: [policy, timing, sensitivities]
+
+Format: [shape and length].
+
+Limits: [tone, words to avoid]. Use inclusive language. If anything is unclear, ask me before you answer.</pre>
+    </div>
+  </section>
+
+  <!-- ── Lesson 3 ── -->
+  <section class="ls-lesson" id="lesson-3">
+    <div class="ls-head"><small>Lesson 3 · Module 03: AI-powered talent acquisition</small><h2>A job description that passes a bias audit</h2><p>About 7 minutes, plus a 10-minute lab</p></div>
+
+    <p>A job description is often the first thing a candidate reads about you, and small word choices change who applies. Research on job adverts has found that gender-coded language (words like "dominant" or "nurturing") can affect how appealing a role feels to different groups. Long lists of "requirements" that are really preferences can also put off capable people who don't tick every box.</p>
+    <p>AI is useful twice here: to draft the JD from a hiring manager's notes, and then to <strong>audit</strong> it, with you making the final call.</p>
+
+    <h3>Step 1: Draft from the real job</h3>
+    <p>Start with what the person will actually do in their first six months, not with an old JD. Give the AI the hiring manager's notes, the team context and your format.</p>
+
+    <h3>Step 2: Audit it</h3>
+    <p>Ask the AI to review the draft against a checklist:</p>
+    <ul class="rs-check">
+      <li>Gender-coded words (for example "aggressive", "rockstar", "nurturing")</li>
+      <li>Age-coded phrases ("young and dynamic", "digital native", "recent graduate" when experience doesn't matter)</li>
+      <li>Requirements that aren't really needed: years of experience, specific degrees, "native speaker"</li>
+      <li>Jargon and internal acronyms an outsider wouldn't understand</li>
+      <li>Missing information candidates care about: location, flexibility, how to apply, accommodations</li>
+    </ul>
+
+    <h3>Step 3: Decide</h3>
+    <p>The AI will suggest changes. Some will be right; some will water down a genuine requirement. You and the hiring manager decide. The aim is a JD that describes the job accurately and invites everyone who could do it.</p>
+
+    <div class="rs-callout warn"><b>Keep it legal</b><p>Never ask AI to screen out candidates by age, gender, religion, caste, marital status or other protected characteristics, even indirectly. Module 3 covers the legal and ethical guardrails in detail.</p></div>
+
+    <div class="ls-lab">
+      <small>Lab 3 · 10 minutes</small>
+      <h3>Audit a real job description</h3>
+      <ol>
+        <li>Take a JD your organisation has published (it's public, so it's safe to paste).</li>
+        <li>Paste it with the audit prompt below.</li>
+        <li>Go through each suggestion and mark it <em>accept</em>, <em>reject</em> or <em>discuss with hiring manager</em>.</li>
+        <li>Ask the AI to produce a revised version using only the changes you accepted.</li>
+      </ol>
+    </div>
+    <div class="rs-prompt">
+      <div class="rs-prompt-h">JD audit prompt <button type="button" class="rs-copy" data-copy>Copy</button></div>
+<pre>You are an inclusive-hiring specialist. Audit the job description below.
+
+For each issue, quote the exact phrase, say why it may put off qualified candidates, and suggest a replacement. Check for:
+1. Gender-coded words
+2. Age-coded phrases
+3. Requirements that may not be essential (years, degrees, language)
+4. Jargon or unclear internal terms
+5. Missing information candidates need
+
+Format as a table: phrase | issue | suggestion.
+Don't rewrite the whole JD yet.
+
+Job description:
+[paste JD]</pre>
+    </div>
+  </section>
+
+  <div class="rs-end">
+    <h2>That's 3 of 60 topics</h2>
+    <p>The full course takes you through 10 modules and 39 labs: CV screening rubrics, onboarding, performance reviews, people analytics, no-code automation, HR AI agents and governance. ₹4,999 one-time, lifetime access, 7-day refund.</p>
+    <div class="rs-btns"><a class="rs-btn" href="/checkout">Enrol now</a><a class="rs-btn ghost" href="/courses/ai-for-hr#curriculum">See the full curriculum</a></div>
+  </div>
+</article>
+</main>
+
+<!-- @include footer -->
+<!-- @include bottom-bar -->
+
+<script src="/scripts/site.js" defer></script>
+<script src="/scripts/resources.js" defer></script>
+</body>
+</html>
