@@ -78,3 +78,10 @@ body { font-family: var(--ebp-font); font-optical-sizing: auto; text-rendering: 
 .ebp-consent-a { display: flex; gap: 8px; }
 .ebp-consent-a .ebp-btn { flex: 1; }
 @media (min-width: 720px) { .ebp-consent { left: 24px; bottom: 24px; } }
+
+/* ── skip link: first tab stop on every page ── */
+.skip-link { position: fixed; z-index: 2000; left: 12px; top: 12px; padding: 10px 14px; border-radius: 8px;
+  background: var(--ebp-navy); color: #fff; font: 600 14px var(--ebp-font); text-decoration: none;
+  transform: translateY(-160%); transition: transform .2s var(--ebp-ease); }
+.skip-link:focus { transform: none; }
+#content:focus { outline: none; }

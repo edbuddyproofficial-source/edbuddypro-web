@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node scripts/build.mjs",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/ai-for-:role(hr|finance|marketing|sales|product)", "destination": "/courses/ai-for-:role", "permanent": true },
+    { "source": "/:page(privacy-policy|terms-of-service|cookie-policy|refund-policy|acceptable-use|accessibility|security|do-not-sell-my-info)", "destination": "/legal/:page", "permanent": true },
+    { "source": "/courses", "destination": "/#courses", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(self)" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    },
+    {
+      "source": "/(styles|scripts|fonts)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/og/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
+    }
+  ]
+}
