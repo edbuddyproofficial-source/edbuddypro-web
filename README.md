@@ -97,7 +97,7 @@ Use `.webp` images around 1200–1600px wide. Run `npm run dev` and look before 
 
 ## Deploying
 
-Git is the only way to production: `deploy.sh` pushes to GitHub and Vercel builds from there.
+`deploy.sh` pushes to GitHub (the history of every release), then deploys with the Vercel CLI as the edbuddy account. Vercel's own Git auto-deploy is switched off in `vercel.json`, because the Hobby plan blocks Git deploys whose commit author isn't the Vercel account owner.
 Vercel and Cloudflare both log in through the browser, like Wisherly, but this project keeps its **own**
 logins (`~/.vercel-edbuddy` and `~/.edbuddy-cli`). Logging in here never signs any other project out.
 If a login link opens in the wrong Chrome profile, copy it into the edbuddy profile.
@@ -128,7 +128,7 @@ cd ~/Developer/edbuddypro
 2. uploads any new images to R2 (before the site that uses them goes live)
 3. shows what changed and asks **y** to commit
 4. on `main`, asks you to type **deploy**; on any other branch, **y** (preview URL only)
-5. pushes; Vercel goes live in about a minute
+5. pushes to GitHub, then deploys with the Vercel CLI; live in about a minute
 
 **Preview first:** `git checkout -b my-change`, then `./scripts/deploy.sh "…"` gives a preview URL.
 When it looks right: `git checkout main && git merge my-change && ./scripts/deploy.sh`.

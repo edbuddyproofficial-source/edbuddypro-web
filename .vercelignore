@@ -1,0 +1,9 @@
+# Not uploaded by "vercel deploy" (the build runs on Vercel from src/)
+node_modules
+dist
+reports
+.env*
+!.env.example
+.wrangler
+*.log
+.DS_Store
