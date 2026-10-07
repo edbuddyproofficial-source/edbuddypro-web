@@ -9,7 +9,8 @@
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Secure checkout | edBuddy Pro</title>  <!-- @include head -->
+<title>Secure checkout | edBuddy Pro</title>
+<meta name="description" content="Enrol in AI for HR Professionals: lifetime access, 39 hands-on labs and a shareable certificate.">  <!-- @include head -->
   <link rel="stylesheet" href="/styles/checkout.css">
   <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
 </head>
@@ -22,7 +23,7 @@
   <aside class="rail">
     <div class="rail-in">
       <div class="rhead"><a class="ebp " href="/" aria-label="edBuddy Pro"><svg class="ebp-lk" viewBox="0 0 1000 223" aria-hidden="true"><use href="#ebp-logo"/></svg></a></div>
-      <p class="amt-l">Pay edBuddy Pro</p>
+      <h1 class="amt-l">Pay edBuddy Pro</h1>
       <p class="amt">&#8377;4,999</p>
 
       <div class="li">
@@ -47,25 +48,24 @@
            alt="Two professionals using AI tools in their day-to-day work">
     </figure>
 
-    <div class="f"><label for="sem">Email address</label><input id="sem" type="email" autocomplete="email"></div>
+    <div class="f"><label for="sem">Email address</label><input id="sem" type="email" autocomplete="email" required></div>
     <div class="r2">
-      <div class="f"><label for="sfn">Full name</label><input id="sfn" type="text" autocomplete="name"></div>
-      <div class="f"><label for="sph">Mobile</label><input id="sph" type="tel" placeholder="+91"></div>
+      <div class="f"><label for="sfn">Full name</label><input id="sfn" type="text" autocomplete="name" required></div>
+      <div class="f"><label for="sph">Mobile</label><input id="sph" type="tel" placeholder="+91" autocomplete="tel"></div>
     </div>
 
     <p class="sec-l">Payment method</p>
-    <div role="radiogroup" aria-label="Payment method"><div class="m on" role="radio" tabindex="0" data-k="upi" aria-checked="true"><span class="m-r"></span><span class="m-t">UPI<span>Pay by any UPI app or ID</span></span><span class="m-x">Instant</span></div><div class="mp" data-p="upi"><div class="f"><label for="svpa">UPI ID</label><input id="svpa" type="text" placeholder="yourname@bank"></div></div><div class="m" role="radio" tabindex="0" data-k="card" aria-checked="false"><span class="m-r"></span><span class="m-t">Card<span>Credit, debit or corporate card</span></span><span></span></div><div class="mp" data-p="card" hidden><div class="f"><label for="scnum">Card number</label><input id="scnum" type="text" placeholder="1234 5678 9012 3456" autocomplete="cc-number"></div><div class="r2"><div class="f"><label for="scexp">Expiry</label><input id="scexp" type="text" placeholder="MM / YY"></div><div class="f"><label for="sccvv">CVV</label><input id="sccvv" type="text" placeholder="123"></div></div></div><div class="m" role="radio" tabindex="0" data-k="nb" aria-checked="false"><span class="m-r"></span><span class="m-t">Net banking<span>All major Indian banks</span></span><span></span></div><div class="mp" data-p="nb" hidden><div class="f"><label for="sbank">Choose your bank</label><input id="sbank" type="text" placeholder="Start typing a bank name"></div></div><div class="m" role="radio" tabindex="0" data-k="wal" aria-checked="false"><span class="m-r"></span><span class="m-t">Wallet<span>Prepaid wallets and Pay Later</span></span><span></span></div><div class="mp" data-p="wal" hidden><div class="f"><label for="swal2">Wallet or Pay Later</label><input id="swal2" type="text" placeholder="Select a provider"></div></div></div>
+    <div role="radiogroup" aria-label="Payment method"><div class="m on" role="radio" tabindex="0" data-k="upi" aria-checked="true"><span class="m-r"></span><span class="m-t">UPI<span>Pay by any UPI app or ID</span></span><span class="m-x">Instant</span></div><div class="m" role="radio" tabindex="0" data-k="card" aria-checked="false"><span class="m-r"></span><span class="m-t">Card<span>Credit, debit or corporate card</span></span><span></span></div></div><div class="m" role="radio" tabindex="0" data-k="nb" aria-checked="false"><span class="m-r"></span><span class="m-t">Net banking<span>All major Indian banks</span></span><span></span></div><div class="m" role="radio" tabindex="0" data-k="wal" aria-checked="false"><span class="m-r"></span><span class="m-t">Wallet<span>Prepaid wallets and Pay Later</span></span><span></span></div></div>
 
-    <button class="btn btn-p go" type="button"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="/assets/icons.svg#i-9615028"/></svg>Pay &#8377;4,999</button>
+    <button class="btn btn-p go" type="button" data-pay><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="/assets/icons.svg#i-9615028"/></svg>Pay &#8377;4,999</button>
     <div class="trust"><i><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Encrypted</i><i><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Not stored by us</i><i><svg class="ck" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>GST invoice</i></div>
     <p class="fine">By paying you accept our <a href="/legal/terms-of-service">terms</a> and <a href="/legal/refund-policy">refund policy</a>.</p>
-    <p style="text-align:center"><span class="note">Gateway not wired &mdash; Razorpay keys still to be connected</span></p>
     <p class="pw">Card details are entered on the gateway and are never stored by edBuddy Pro.</p>
   </div></main>
 </div>
 
 <div class="mbar"><div><b>&#8377;4,999</b><span>GST included</span></div>
-  <button class="btn btn-p" type="button"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="/assets/icons.svg#i-9615028"/></svg>Pay now</button></div>
+  <button class="btn btn-p" type="button" data-pay><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="/assets/icons.svg#i-9615028"/></svg>Pay now</button></div>
 
 <script src="/scripts/site.js" defer></script>
 <script src="/scripts/checkout.js" defer></script>

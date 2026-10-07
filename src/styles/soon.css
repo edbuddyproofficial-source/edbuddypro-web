@@ -1,0 +1,95 @@
+/* ═══════════════════════════════════════════════════════════
+   edBuddy Pro — soon.css
+   Course pages that are not open for enrolment yet
+   (/courses/ai-for-finance, -marketing, -sales, -product).
+   Mobile first; the desktop layout starts at 900px.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --font: 'Figtree', -apple-system, sans-serif;
+  --font-display: 'Figtree', -apple-system, sans-serif;
+  --blue: #0559B3;
+  --navy: #06213D;
+  --ink: #0B1220;
+  --muted: #55657A;
+  --line: #E3E8EF;
+  --tint: #F4F7FB;
+  --nav-h: 64px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); color: var(--ink); background: #fff;
+  -webkit-font-smoothing: antialiased; padding-bottom: 60px; overflow-x: clip; }
+img { max-width: 100%; display: block; }
+.so-wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+/* ── hero ── */
+.so-hero { padding: 40px 0 56px; }
+.so-hero .so-wrap { display: grid; gap: 36px; }
+.so-status { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px;
+  font-size: 14px; font-weight: 600; color: var(--blue); }
+.so-status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--blue);
+  box-shadow: 0 0 0 4px rgba(5, 89, 179, .14); }
+.so-h1 { margin: 0; font: 800 clamp(44px, 11vw, 92px)/.96 var(--font-display);
+  letter-spacing: -.035em; color: var(--navy); }
+.so-lead { margin: 22px 0 0; max-width: 34ch; font-size: clamp(18px, 4.6vw, 22px); line-height: 1.45; color: var(--ink); }
+.so-desc { margin: 14px 0 0; max-width: 52ch; font-size: 16px; line-height: 1.6; color: var(--muted); }
+
+.so-form { margin: 30px 0 0; max-width: 460px; }
+.so-form label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.so-row { display: flex; flex-direction: column; gap: 10px; }
+.so-row input { width: 100%; height: 50px; padding: 0 16px; font: 500 16px var(--font); color: var(--ink);
+  border: 1px solid #C9D3E0; border-radius: 8px; background: #fff; }
+.so-row input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(5, 89, 179, .18); }
+.so-row button { height: 50px; padding: 0 22px; font: 700 15px var(--font); color: #fff; cursor: pointer;
+  background: var(--blue); border: 0; border-radius: 8px; white-space: nowrap; }
+.so-row button:hover { background: #044A96; }
+.so-fine { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+.so-fine a { color: inherit; }
+
+.so-shot { margin: 0; border-radius: 10px; overflow: hidden; background: var(--tint); aspect-ratio: 4 / 3; }
+.so-shot img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ── what you'll be able to do ── */
+.so-can { padding: 56px 0; background: var(--tint); }
+.so-h2 { margin: 0 0 8px; font: 800 clamp(28px, 6vw, 40px)/1.08 var(--font-display); letter-spacing: -.025em; color: var(--navy); }
+.so-sub { margin: 0 0 30px; font-size: 16px; line-height: 1.6; color: var(--muted); max-width: 56ch; }
+.so-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #D5DEEA; }
+.so-list li { padding: 20px 0; border-bottom: 1px solid #D5DEEA;
+  font: 700 clamp(20px, 5vw, 26px)/1.25 var(--font-display); letter-spacing: -.015em; color: var(--ink); }
+
+/* ── how it is built + the live course ── */
+.so-built { padding: 56px 0; }
+.so-built .so-wrap { display: grid; gap: 36px; }
+.so-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; margin: 26px 0 0; }
+.so-fact b { display: block; font: 800 30px/1 var(--font-display); color: var(--navy); letter-spacing: -.02em; }
+.so-fact span { display: block; margin-top: 6px; font-size: 14px; line-height: 1.45; color: var(--muted); }
+
+.so-live { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center;
+  padding: 16px; border: 1px solid var(--line); border-radius: 10px; color: inherit; text-decoration: none;
+  transition: border-color .2s; }
+.so-live:hover { border-color: var(--blue); }
+.so-live img { width: 96px; height: 96px; object-fit: cover; border-radius: 6px; }
+.so-live small { display: block; font-size: 13px; font-weight: 600; color: #0E7A4F; }
+.so-live strong { display: block; margin: 4px 0; font-size: 18px; line-height: 1.25; }
+.so-live em { font-style: normal; font-size: 14px; color: var(--muted); }
+.so-live-h { margin: 0 0 12px; font-size: 15px; font-weight: 600; color: var(--muted); }
+
+.so-team { margin-top: 18px; font-size: 15px; color: var(--muted); }
+.so-team a { color: var(--blue); font-weight: 600; }
+
+@media (min-width: 560px) {
+  .so-row { flex-direction: row; }
+  .so-facts { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 900px) {
+  .so-wrap { padding: 0 32px; }
+  .so-hero { padding: 72px 0 88px; }
+  .so-hero .so-wrap { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+  .so-shot { aspect-ratio: 5 / 6; }
+  .so-can { padding: 88px 0; }
+  .so-can .so-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start; }
+  .so-list { border-top: 0; }
+  .so-list li:first-child { padding-top: 0; }
+  .so-built { padding: 88px 0; }
+  .so-built .so-wrap { grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: end; }
+}

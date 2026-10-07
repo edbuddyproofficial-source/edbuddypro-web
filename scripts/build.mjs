@@ -131,7 +131,7 @@ for (const page of pages) {
   html = fill(html, { site, social: site.social, page: { route: page.route } });
 
   // links whose href ended up empty (e.g. a social profile not set yet) are dropped
-  html = html.replace(/<a\b[^>]*\bhref=""[^>]*>[\s\S]*?<\/a>\s*/g, '');
+  html = html.replace(/<a\b[^>]*\bhref="(?:tel:|mailto:)?"[^>]*>[\s\S]*?<\/a>\s*/g, '');
 
   const { tags, stripOg } = seoTags(html, page);
   if (stripOg) html = html.replace(stripOg, '');

@@ -42,17 +42,17 @@
       <p class="bz-micro">Prefer to read first? <a href="#tracks">See what each track covers</a>.</p>
     </div>
 
-    <div class="bz-form" id="talk">
+    <form class="bz-form" id="talk" data-lead="business">
       <h3>Talk to us about your team</h3>
       <p class="sub">Tell us the roles and the rough headcount. We will come back with a scope and pricing.</p>
-      <div class="fld"><label for="bn">Full name</label><input id="bn" type="text" autocomplete="name"></div>
-      <div class="fld"><label for="be">Work email</label><input id="be" type="email" autocomplete="email"></div>
+      <div class="fld"><label for="bn">Full name</label><input id="bn" type="text" required autocomplete="name"></div>
+      <div class="fld"><label for="be">Work email</label><input id="be" type="email" required autocomplete="email"></div>
       <div class="fld"><label for="bc">Company</label><input id="bc" type="text" autocomplete="organization"></div>
       <div class="fld"><label for="bs">Team size</label>
         <select id="bs"><option>1–10</option><option>11–50</option><option>51–200</option><option>201–1000</option><option>1000+</option></select></div>
       <button class="btn btn-p" type="button">Request a scope and quote <svg viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-981b2b0"/></svg></button>
       <p class="bz-fine">We reply within one working day. Your details are never shared — see our <a href="/legal/privacy-policy">privacy policy</a>.</p>
-    </div>
+    </form>
   </div>
 </section>
 
@@ -309,7 +309,7 @@
     </g>
   </g>
 </svg></div>
-    <p class="ctr" style="margin-top:22px"><span class="fx-note">Illustrative layout — confirm against the LMS build before launch</span></p>
+    <p class="ctr" style="margin-top:22px"><span class="fx-note">Illustrative layout</span></p>
   </div>
 </section>
 
@@ -367,18 +367,7 @@
   </div>
 </section>
 
-<!-- ══ CASE STUDY — needs real data ══ -->
-<section class="sec-sm">
-  <div class="wrap">
-    <p class="kick">Proof</p>
-    <h2>What a rollout looked like</h2>
-    <div class="fx-block" style="max-width:780px;margin:26px auto 0;text-align:left">
-      <strong>Case study — needs a real customer</strong>
-      <p>One named organisation, the roles covered, seat count, what was measured and what moved. A B2B buyer reaches this point looking for evidence, and this is where the page currently has none.</p>
-      <p style="margin-top:12px">Until a customer agrees to be named, an anonymised version works — sector, team size and the measured outcome — but the numbers have to be real. Do not fill this with a stock testimonial; the site already carries unverified ratings and badges that need removing before launch.</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- ══ PRICING ══ -->
 <section class="sec">
@@ -386,10 +375,7 @@
     <p class="kick">Pricing</p>
     <h2>Volume pricing, quoted per rollout</h2>
     <p class="lead">Individual seats are ₹4,999 one-time with lifetime access and GST included. Team pricing depends on headcount, track mix and delivery format.</p>
-    <div class="fx-block" style="max-width:640px;margin:32px auto 0">
-      <strong>Team pricing tiers — to be set</strong>
-      <p>Break points, discounts and any minimum seat count are commercial decisions. This section should carry a real table before the page goes live, or the page should say plainly that pricing is quoted on request.</p>
-    </div>
+    
     <div class="btns"><a class="btn btn-p" href="#talk">Get a quote <svg viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-981b2b0"/></svg></a></div>
   </div>
 </section>
@@ -399,7 +385,7 @@
   <div class="wrap">
     <p class="kick">Questions</p>
     <h2>Before you talk to us</h2>
-    <div class="faqx"><details><summary>How many seats do we need to start?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p><span class="fx-note">Minimum seat count — to confirm</span> Volume pricing and the point at which it applies are commercial decisions the business needs to set before this page goes live.</p></div></details><details><summary>Can we map the tracks to our own roles?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>The five tracks are built around role workflows rather than job titles, so a people-ops analyst and an HR business partner both fit the HR track. At scoping we go through your org and agree which track each group takes.</p></div></details><details><summary>Do our people need any technical background?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>No. Every track is built on the assumption that nobody writes code at any point. The tools used are ChatGPT, Claude, Gemini and the document and spreadsheet software your team already has.</p></div></details><details><summary>What happens to the work they produce?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>Each track carries ten projects built on real artefacts — a screening rubric, a variance commentary, a campaign brief. Those stay with the learner and with you.</p></div></details><details><summary>How is our data handled?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>Learners work in their own accounts on the AI tools, so their material does not pass through us. Course accounts and progress data are covered by our privacy policy and the DPDP Act.</p></div></details><details><summary>What does reporting look like for an admin?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p><span class="fx-note">Admin dashboard scope — to confirm against the LMS build</span> The reporting surface depends on what the platform ships with at launch, so this answer should be written once that is settled.</p></div></details></div>
+    <div class="faqx"><details><summary>How many seats do we need to start?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>Tell us the roles and rough headcount and we will quote for that rollout. Volume pricing applies as the seat count grows.</p></div></details><details><summary>Can we map the tracks to our own roles?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>The five tracks are built around role workflows rather than job titles, so a people-ops analyst and an HR business partner both fit the HR track. At scoping we go through your org and agree which track each group takes.</p></div></details><details><summary>Do our people need any technical background?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>No. Every track is built on the assumption that nobody writes code at any point. The tools used are ChatGPT, Claude, Gemini and the document and spreadsheet software your team already has.</p></div></details><details><summary>What happens to the work they produce?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>Each track carries ten projects built on real artefacts — a screening rubric, a variance commentary, a campaign brief. Those stay with the learner and with you.</p></div></details><details><summary>How is our data handled?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>Learners work in their own accounts on the AI tools, so their material does not pass through us. Course accounts and progress data are covered by our privacy policy and the DPDP Act.</p></div></details><details><summary>What does reporting look like for an admin?<svg class="faqx-i" viewBox="0 0 24 24" aria-hidden="true"><use href="/assets/icons.svg#i-f063cbd"/></svg></summary><div class="faqx-a"><p>We agree the reporting with you at scoping. As a minimum you get enrolment and completion progress for every learner on the rollout.</p></div></details></div>
   </div>
 </section>
 

@@ -7,7 +7,8 @@
                    a backend (see README → "Connecting the forms")
    3. Consent      cookie banner; GA4 loads only after "Accept"
    4. Nav          menu, mega-menu filter, scroll state
-   5. Bottom bar   sticky call-back bar and panel
+   5. Bottom bar   sticky call-back bar and panel; any
+                   [data-callback-open] button opens the panel
    ═══════════════════════════════════════════════════════════ */
 
 /* ── 1. core ─────────────────────────────────────────────── */
@@ -62,7 +63,8 @@ var EBP = window.EBP = window.EBP || {};
     var lines = Object.keys(data).filter(function (k) { return data[k]; })
       .map(function (k) { return k.charAt(0).toUpperCase() + k.slice(1) + ': ' + data[k]; });
     var subject = { callback: 'Call-back request', newsletter: 'Newsletter sign-up',
-      business: 'Team training enquiry', enquiry: 'Course enquiry' }[kind] || 'Enquiry';
+      business: 'Team training enquiry', enquiry: 'Course enquiry',
+      enrol: 'Enrolment: AI for HR Professionals', waitlist: 'Waitlist' }[kind] || 'Enquiry';
     location.href = 'mailto:' + EBP.config.email + '?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(lines.join('\n') + '\n\nSent from ' + location.href);
     return Promise.resolve();
@@ -252,7 +254,7 @@ var EBP = window.EBP = window.EBP || {};
       close = document.getElementById('cbClose'),
       form  = document.getElementById('cbForm'),
       err   = document.getElementById('cbErr'),
-      chat  = document.getElementById('cbChat');
+      chat  = null;
 
   function open(v) {
     if (!panel) return;
@@ -316,8 +318,17 @@ var EBP = window.EBP = window.EBP || {};
     return hero ? hero.offsetTop + hero.offsetHeight - 120
                 : Math.round(window.innerHeight * 0.7);
   }
+  var forced = false;
+  EBP.openCallback = function () {
+    forced = true; bar.classList.add('is-on'); open(true);
+  };
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('[data-callback-open]')) { e.preventDefault(); EBP.openCallback(); }
+  });
+  if (close) close.addEventListener('click', function () { forced = false; sync(); });
+
   function sync() {
-    var on = window.pageYOffset > threshold();
+    var on = forced || window.pageYOffset > threshold();
     bar.classList.toggle('is-on', on);
     if (!on && panel && !panel.hidden) open(false);
     ticking = false;
