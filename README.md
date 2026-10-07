@@ -81,7 +81,7 @@ The build then:
 
 | I want to… | Edit |
 |---|---|
-| Change contact email, phone, social links | `site.config.json` |
+| Change contact emails, phone, WhatsApp, social links | `site.config.json` (`email` is the main contact; `emails.finance` is used on the refund policy, `emails.admin` on privacy, terms and security) |
 | Change the menu or footer | `src/partials/nav.html`, `src/partials/footer.html` |
 | Edit a page's words | the page in `src/pages/` |
 | Swap a photo | replace the file in `src/assets/img/` with the **same name**, then `./scripts/deploy.sh` |
@@ -141,7 +141,7 @@ Every form on the site (call-back panel, course enquiry, B2B, newsletter, waitli
 goes through one function, `EBP.submitLead(kind, data)` in `src/scripts/site.js`.
 
 - **Today:** `leads.endpoint` in `site.config.json` is empty, so a submit opens the visitor's email app
-  with their details addressed to `hello@edbuddypro.com`. No enquiry is lost, but it relies on the visitor sending that email.
+  with their details addressed to `support@edbuddypro.com`. No enquiry is lost, but it relies on the visitor sending that email.
 - **When the backend is ready:** put its URL in `leads.endpoint`. Every form will then `POST` JSON:
   ```json
   { "kind": "callback | enquiry | business | newsletter | waitlist | webinar | verify | access | enrol", "page": "/courses/ai-for-hr",

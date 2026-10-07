@@ -4,7 +4,8 @@
 
 These need a business decision or information only you have. The site works without them, but each one is a gap a visitor or regulator can see.
 
-- [ ] **Inbox.** Make sure `hello@edbuddypro.com` exists and someone reads it. Every form currently ends up there.
+- [ ] **Inboxes.** `support@` is the main contact and every form currently ends up there; `finance@` is on the refund policy; `admin@` on the privacy policy, terms, cookies and security pages. Make sure someone reads each one.
+- [ ] **WhatsApp.** "Live chat" opens WhatsApp to +91 84467 73219. Install WhatsApp Business on that number and set a greeting and away message.
 - [ ] **Refund window.** The HR page and FAQ promise a *7-day refund*. Confirm it, or change the figure in `src/pages/courses/ai-for-hr.html`, `src/pages/index.html` (FAQ) and `src/pages/legal/refund-policy.html`.
 - [ ] **Privacy policy.** Add the registered entity name, CIN, registered office and the grievance officer's name and contact (required under the DPDP Act, 2023).
 - [ ] **Legal review.** The legal pages are drafts that haven't been reviewed by a lawyer. Their open questions are hidden from the live site and listed in `reports/open-legal-items.md` (run `npm run build` to regenerate the list).
@@ -18,7 +19,6 @@ These need a business decision or information only you have. The site works with
 - [ ] **Login button.** It opens `/login`, which explains where learners find their access link and lets them request it again (to the inbox). When the learning platform is live, send Login straight to it: add `{ "source": "/login", "destination": "<LMS login URL>", "permanent": false }` to `redirects` in `vercel.json`.
 - [ ] **Leads backend.** Set `leads.endpoint` in `site.config.json` (see README → Connecting the forms).
 - [ ] **Razorpay.** Wire the payment button (see README → Connecting payments).
-- [ ] **Phone number.** Add it to `site.config.json → phone`. The "Call us" item appears in the bottom bar once it's set.
 - [ ] **Social profiles.** Add the URLs to `site.config.json → social`. Each icon appears in the footer once set.
 - [ ] **GA4** (optional). Add the id to `site.config.json → analytics.ga4`.
 - [ ] **Role photos.** The homepage "Browse by role" panel had no images for 10 roles, so it reuses course photos for now. Add dedicated images to `src/assets/img/` and update the `rp` panels in `src/pages/index.html`.

@@ -2,10 +2,15 @@
   "name": "edBuddy Pro",
   "url": "https://edbuddypro.com",
   "cdn": "https://cdn.edbuddypro.com",
-  "email": "hello@edbuddypro.com",
+  "email": "support@edbuddypro.com",
+  "emails": {
+    "support": "support@edbuddypro.com",
+    "finance": "finance@edbuddypro.com",
+    "admin": "admin@edbuddypro.com"
+  },
   "phone": {
-    "display": "",
-    "tel": ""
+    "display": "+91 84467 73219",
+    "tel": "+918446773219"
   },
   "themeColor": "#06213D",
   "ogImage": "/og/default.png",
@@ -25,5 +30,6 @@
   "sitemapExclude": [
     "/404",
     "/checkout"
-  ]
+  ],
+  "whatsapp": "918446773219"
 }

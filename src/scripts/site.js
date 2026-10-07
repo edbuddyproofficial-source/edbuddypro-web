@@ -16,7 +16,7 @@ var EBP = window.EBP = window.EBP || {};
 (function () {
   'use strict';
   function meta(n) { var m = document.querySelector('meta[name="ebp:' + n + '"]'); return m ? m.content : ''; }
-  EBP.config = { ga4: meta('ga4'), leadEndpoint: meta('lead-endpoint'), email: meta('email') || 'hello@edbuddypro.com' };
+  EBP.config = { ga4: meta('ga4'), leadEndpoint: meta('lead-endpoint'), email: meta('email') || 'support@edbuddypro.com' };
 
   EBP.store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
