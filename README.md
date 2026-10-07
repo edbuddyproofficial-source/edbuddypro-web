@@ -8,9 +8,10 @@ Plain HTML, CSS and JavaScript with a small build step. No framework, no depende
 - **Code:** GitHub
 
 ```bash
-npm run dev        # build and preview at http://localhost:4321
-npm run build      # build into dist/ and check every page
-./deploy.sh        # upload new images, push, Vercel deploys
+cd ~/Developer/edbuddypro
+npm run dev                          # preview at http://localhost:4321
+./scripts/check.sh                   # read-only pre-flight, run any time
+./scripts/deploy.sh "What changed"   # check → images to R2 → commit → push → Vercel deploys
 ```
 
 ---
@@ -40,9 +41,13 @@ src/
 scripts/
   build.mjs             ← src/ → dist/, plus SEO tags, sitemap, robots, link checks
   serve.mjs             ← local preview that behaves like Vercel
-  upload-assets.mjs     ← pushes src/assets/img to R2
+  upload-assets.mjs     ← pushes new images in src/assets/img to R2 (log: r2-uploaded.txt)
+  setup.sh              ← once per Mac: GitHub, Cloudflare R2, Vercel, first deploy
+  check.sh              ← read-only pre-flight
+  deploy.sh             ← every release
+  lib.sh                ← shared settings (repo, bucket, domain) and helpers
 vercel.json             ← clean URLs, redirects from old .html links, security + cache headers
-deploy.sh               ← first-time setup and every release
+.env.example            ← copy to .env.local for the Cloudflare token (never committed)
 ```
 
 ### What the build does for you
@@ -70,7 +75,7 @@ The build then:
 | Change contact email, phone, social links | `site.config.json` |
 | Change the menu or footer | `src/partials/nav.html`, `src/partials/footer.html` |
 | Edit a page's words | the page in `src/pages/` |
-| Swap a photo | replace the file in `src/assets/img/` with the **same name**, then `./deploy.sh` |
+| Swap a photo | replace the file in `src/assets/img/` with the **same name**, then `./scripts/deploy.sh` |
 | Add a photo | drop it in `src/assets/img/`, reference it as `/assets/img/name.webp` |
 | Add a page | create `src/pages/new-page.html` (copy a legal page as a starting point) |
 | Open a course for enrolment | rebuild its page from `courses/ai-for-hr.html`, then update the nav, homepage cards and footer |
@@ -81,36 +86,49 @@ Use `.webp` images around 1200–1600px wide. Run `npm run dev` and look before 
 
 ## Deploying
 
-### First time (once)
+Git is the only way to production: `deploy.sh` pushes to GitHub and Vercel builds from there.
+This project uses its **own** Vercel login (stored in `~/.vercel-edbuddy`) and its **own** Cloudflare
+token (in `.env.local`), so it never signs your Mac out of any other project.
 
-You need Node 18+, git and the [GitHub CLI](https://cli.github.com). Use the edbuddy accounts when each tool asks you to sign in.
+### First-time setup (once per Mac)
 
-1. **Domain on Cloudflare.** Make sure `edbuddypro.com` is added to the Cloudflare account and its nameservers point to Cloudflare. Copy the **Zone ID** from the domain's Overview page.
-2. Run:
+1. **Folder:** the project lives at `~/Developer/edbuddypro`.
+2. **GitHub access:** your Mac must be able to push to `edbuddyproofficial-source/edbuddypro-web`.
+   If your usual GitHub account isn't on that org, invite it under repo Settings → Collaborators and accept.
+3. **Cloudflare token:**
    ```bash
-   GH_OWNER=edbuddyproofficial-source CF_ZONE_ID=<zone-id> ./deploy.sh setup
+   cd ~/Developer/edbuddypro
+   cp .env.example .env.local
+   open -e .env.local
    ```
-   This will:
-   - create the private GitHub repo and push
-   - create the R2 bucket `edbuddypro-assets`, attach `cdn.edbuddypro.com` and upload every image
-   - create the Vercel project, set `CDN_URL`, connect GitHub, turn on Web Analytics and Speed Insights
-   - add the domains and run the first production deploy
-3. In Cloudflare DNS, add the two records Vercel prints. Set them to **DNS only** (grey cloud).
-4. In Vercel → Settings → Domains, redirect `www.edbuddypro.com` to `edbuddypro.com`.
+   Fill in `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN`. The file explains where to find each.
+4. **Run setup:**
+   ```bash
+   ./scripts/setup.sh
+   ```
+   It pushes the code, creates the R2 bucket, connects `cdn.edbuddypro.com`, uploads the images,
+   logs in to Vercel as the edbuddy account, links the project, sets `CDN_URL`, connects GitHub,
+   turns on analytics, adds the domains and does the first production deploy.
+   Where a step needs the dashboard, it says exactly what to click and waits.
+5. **DNS:** add the two records the script prints in Cloudflare → edbuddypro.com → DNS, set to **DNS only**.
 
 ### Every release
 
 ```bash
-MSG="Update HR course FAQ" ./deploy.sh
+cd ~/Developer/edbuddypro
+./scripts/deploy.sh "Update HR course FAQ"
 ```
 
-This uploads any new or changed images to R2, does a production build to check everything, commits and pushes. Vercel builds and deploys `main` in about a minute. Every other branch gets its own preview URL on Vercel.
+1. runs `check.sh` and stops on any broken link, missing image, secret or syntax error
+2. uploads any new images to R2 (before the site that uses them goes live)
+3. shows what changed and asks **y** to commit
+4. on `main`, asks you to type **deploy**; on any other branch, **y** (preview URL only)
+5. pushes; Vercel goes live in about a minute
 
-Other commands: `./deploy.sh assets` (images only), `./deploy.sh prod` (deploy straight from your machine).
+**Preview first:** `git checkout -b my-change`, then `./scripts/deploy.sh "…"` gives a preview URL.
+When it looks right: `git checkout main && git merge my-change && ./scripts/deploy.sh`.
 
-> Images go to R2 **before** the push. If you ever deploy and see a broken image, run `./deploy.sh assets`.
-
----
+**Rollback:** Vercel → edbuddypro-web → Deployments → previous build → **Instant Rollback**.
 
 ## Connecting the forms
 
