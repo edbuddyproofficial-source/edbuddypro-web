@@ -146,6 +146,8 @@ for (const page of pages) {
     return '';
   });
 
+  // images load lazily unless the page says otherwise (loading="eager" on the hero)
+  html = html.replace(/<img\b(?![^>]*\bloading=)([^>]*)>/g, '<img loading="lazy" decoding="async"$1>');
   html = stamp(rewriteImages(html));
   html = html.replace(/\n{3,}/g, '\n\n');
   write(page.out, html);

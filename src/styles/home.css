@@ -2635,3 +2635,15 @@
 
   /* the B2B contact fields sit inside a <form>; keep the card's own layout */
   .cform-form { display: contents; }
+
+  /* hero dots: the button is a 24px tap target, the dot is drawn inside it */
+  .sp-dots { gap: 0; margin-left: -8px; }
+  .sp-dots button, .sp-dots button.on { width: 24px; height: 24px; padding: 0; border: 0; border-radius: 0;
+    background: transparent; display: grid; place-items: center; cursor: pointer; }
+  .sp-dots button.on { width: 40px; }
+  .sp-dots button::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: #C2CBD8;
+    transition: width .35s var(--ease), background .2s; }
+  .sp-dots button.on::before { width: 26px; border-radius: 5px; background: #0559B3; }
+
+  /* secondary hero button sits on the photo: give it a solid face so it stays legible */
+  .sp-b2 { background: #fff; }

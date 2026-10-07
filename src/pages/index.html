@@ -6,6 +6,7 @@
 <title>edBuddy Pro | Practical AI courses for working professionals</title>
 <meta name="description" content="Role-based AI courses for HR, finance, marketing, sales and product teams. Hands-on labs, projects you keep and a shareable certificate. No coding needed.">
   <!-- @include head -->
+  <link rel="preload" as="image" href="/assets/img/hero-learner-laptop.webp" fetchpriority="high">
   <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="/styles/components.css"><!-- last: shared nav/footer/bar win -->
 </head>
@@ -29,7 +30,7 @@
     <div class="sp-carousel" id="heroCarousel">
       <div class="sp-stage">
       <div class="sp-slide on" data-i="0">
-        <img src="/assets/img/hero-learner-laptop.webp" alt="A learner working through an AI course on a laptop at home" loading="eager">
+        <img src="/assets/img/hero-learner-laptop.webp" alt="A learner working through an AI course on a laptop at home" loading="eager" fetchpriority="high">
         <div class="sp-wash"></div>
         <div class="sp-copy">
           <h1>Learn. Apply.<b>Get ahead with AI</b></h1>
@@ -41,7 +42,7 @@
         </div>
       </div>
       <div class="sp-slide" data-i="1">
-        <img src="/assets/img/hero-teams-meeting.webp" alt="Two teams meeting and shaking hands in a bright office" loading="eager">
+        <img src="/assets/img/hero-teams-meeting.webp" alt="Two teams meeting and shaking hands in a bright office" loading="lazy">
         <div class="sp-wash"></div>
         <div class="sp-copy">
           <h2 class="sp-h-role"><b>AI for <i class="sp-hi">HR</i> Professionals</b></h2>
@@ -49,7 +50,7 @@
           <div class="sp-cta"><a href="/courses/ai-for-hr" class="sp-b1">View the HR course <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="/assets/icons.svg#i-0cbaefb"/></svg></a><a href="#courses" class="sp-b2">All courses</a></div></div>
       </div>
       <div class="sp-slide" data-i="2">
-        <img src="/assets/img/hero-learner-desk.webp" alt="A learner smiling at his desk beside an open laptop" loading="eager">
+        <img src="/assets/img/hero-learner-desk.webp" alt="A learner smiling at his desk beside an open laptop" loading="lazy">
         <div class="sp-wash"></div>
         <div class="sp-copy">
           <h2 class="sp-h-role"><b>AI for <i class="sp-hi">Finance</i> Professionals</b></h2>
@@ -58,10 +59,10 @@
       </div>
       </div>
 
-      <button class="sp-arrow prev" id="carPrev" aria-label="Previous sp-slide"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-      <button class="sp-arrow next" id="carNext" aria-label="Next sp-slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+      <button class="sp-arrow prev" id="carPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="sp-arrow next" id="carNext" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
 
-      <div class="sp-dots" id="carDots" role="tablist" aria-label="Choose sp-slide">
+      <div class="sp-dots" id="carDots" role="tablist" aria-label="Choose a slide">
         <button class="on" data-d="0" role="tab" aria-label="Slide 1" aria-selected="true"></button>
         <button data-d="1" role="tab" aria-label="Slide 2" aria-selected="false"></button>
         <button data-d="2" role="tab" aria-label="Slide 3" aria-selected="false"></button>

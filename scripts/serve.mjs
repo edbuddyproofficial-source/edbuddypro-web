@@ -2,6 +2,7 @@
 // Local preview of dist/ that behaves like Vercel: clean URLs and the custom 404.
 //   node scripts/serve.mjs [port]
 import { createServer } from 'node:http';
+import { gzipSync } from 'node:zlib';
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { join, extname, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,6 +27,13 @@ createServer((req, res) => {
   const hit = file(base) || file(base + '.html') || file(join(base, 'index.html'));
   const target = hit || file(join(DIST, '404.html'));
   if (!target) { res.writeHead(404); return res.end('Not found'); }
-  res.writeHead(hit ? 200 : 404, { 'Content-Type': TYPES[extname(target)] || 'application/octet-stream' });
-  res.end(readFileSync(target));
+  const type = TYPES[extname(target)] || 'application/octet-stream';
+  let body = readFileSync(target);
+  const headers = { 'Content-Type': type };
+  // compress text like Vercel does, so local Lighthouse numbers are realistic
+  if (/text|javascript|svg|json|xml/.test(type) && /gzip/.test(req.headers['accept-encoding'] || '')) {
+    body = gzipSync(body); headers['Content-Encoding'] = 'gzip';
+  }
+  res.writeHead(hit ? 200 : 404, headers);
+  res.end(body);
 }).listen(PORT, () => console.log(`edBuddy Pro preview → http://localhost:${PORT}`));
