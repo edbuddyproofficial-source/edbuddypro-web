@@ -152,6 +152,16 @@ for (const page of pages) {
   built[page.route] = html;
 }
 
+// icon sprite: ship only the symbols some page actually uses
+{
+  const used = new Set(Object.values(built).flatMap((h) => [...h.matchAll(/icons\.svg[^"#]*#([\w-]+)/g)].map((m) => m[1])));
+  const sprite = read('src/assets/icons.svg').replace(/<symbol id="([\w-]+)">[\s\S]*?<\/symbol>\n?/g,
+    (m, id) => (used.has(id) ? m : ''));
+  write(join(DIST, 'assets/icons.svg'), sprite);
+  const all = (read('src/assets/icons.svg').match(/<symbol /g) || []).length;
+  if (used.size < all) warnings.push(`icons.svg: ${all - used.size} unused symbols left out of the build`);
+}
+
 // ── 3. sitemap + robots ─────────────────────────────────────────
 const today = new Date().toISOString().slice(0, 10);
 const indexable = pages.filter((p) => !site.sitemapExclude.includes(p.route)
