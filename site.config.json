@@ -1,0 +1,29 @@
+{
+  "name": "edBuddy Pro",
+  "url": "https://edbuddypro.com",
+  "cdn": "https://cdn.edbuddypro.com",
+  "email": "hello@edbuddypro.com",
+  "phone": {
+    "display": "",
+    "tel": ""
+  },
+  "themeColor": "#06213D",
+  "ogImage": "/og/default.png",
+  "analytics": {
+    "vercel": true,
+    "ga4": ""
+  },
+  "leads": {
+    "endpoint": ""
+  },
+  "social": {
+    "linkedin": "",
+    "instagram": "",
+    "youtube": "",
+    "x": ""
+  },
+  "sitemapExclude": [
+    "/404",
+    "/checkout"
+  ]
+}
